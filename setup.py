@@ -26,7 +26,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "mailmojo"
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 
 # To install the library, run the following
 #
@@ -41,13 +41,25 @@ setup(
     name=NAME,
     version=VERSION,
     description="MailMojo API",
+    author="Eliksir AS",
     author_email="hjelp@mailmojo.no",
-    url="https://mailmojo.gelato.io",
-    keywords=["Swagger", "MailMojo API"],
+    url="https://github.com/eliksir/mailmojo-python-sdk",
+    keywords=["Swagger", "MailMojo"],
+    license="Apache",
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
     v1 of the MailMojo API
-    """
+    """,
+    classifiers=[
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+        'License :: OSI Approved :: Apache Software License',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4',
+    ],
 )
