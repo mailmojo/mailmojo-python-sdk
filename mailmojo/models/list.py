@@ -101,7 +101,6 @@ class List(object):
         """
         Gets the created of this List.
 
-
         :return: The created of this List.
         :rtype: datetime
         """
@@ -123,7 +122,6 @@ class List(object):
         """
         Gets the description of this List.
 
-
         :return: The description of this List.
         :rtype: str
         """
@@ -133,7 +131,6 @@ class List(object):
     def description(self, description):
         """
         Sets the description of this List.
-
 
         :param description: The description of this List.
         :type: str
@@ -146,7 +143,6 @@ class List(object):
         """
         Gets the facebook of this List.
 
-
         :return: The facebook of this List.
         :rtype: str
         """
@@ -156,7 +152,6 @@ class List(object):
     def facebook(self, facebook):
         """
         Sets the facebook of this List.
-
 
         :param facebook: The facebook of this List.
         :type: str
@@ -169,7 +164,6 @@ class List(object):
         """
         Gets the from_email of this List.
 
-
         :return: The from_email of this List.
         :rtype: str
         """
@@ -180,10 +174,11 @@ class List(object):
         """
         Sets the from_email of this List.
 
-
         :param from_email: The from_email of this List.
         :type: str
         """
+        if from_email is None:
+            raise ValueError("Invalid value for `from_email`, must not be `None`")
 
         self._from_email = from_email
 
@@ -191,7 +186,6 @@ class List(object):
     def from_name(self):
         """
         Gets the from_name of this List.
-
 
         :return: The from_name of this List.
         :rtype: str
@@ -203,10 +197,11 @@ class List(object):
         """
         Sets the from_name of this List.
 
-
         :param from_name: The from_name of this List.
         :type: str
         """
+        if from_name is None:
+            raise ValueError("Invalid value for `from_name`, must not be `None`")
 
         self._from_name = from_name
 
@@ -214,7 +209,6 @@ class List(object):
     def id(self):
         """
         Gets the id of this List.
-
 
         :return: The id of this List.
         :rtype: int
@@ -237,7 +231,6 @@ class List(object):
         """
         Gets the instagram of this List.
 
-
         :return: The instagram of this List.
         :rtype: str
         """
@@ -247,7 +240,6 @@ class List(object):
     def instagram(self, instagram):
         """
         Sets the instagram of this List.
-
 
         :param instagram: The instagram of this List.
         :type: str
@@ -260,7 +252,6 @@ class List(object):
         """
         Gets the linkedin of this List.
 
-
         :return: The linkedin of this List.
         :rtype: str
         """
@@ -270,7 +261,6 @@ class List(object):
     def linkedin(self, linkedin):
         """
         Sets the linkedin of this List.
-
 
         :param linkedin: The linkedin of this List.
         :type: str
@@ -283,7 +273,6 @@ class List(object):
         """
         Gets the name of this List.
 
-
         :return: The name of this List.
         :rtype: str
         """
@@ -294,10 +283,11 @@ class List(object):
         """
         Sets the name of this List.
 
-
         :param name: The name of this List.
         :type: str
         """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")
 
         self._name = name
 
@@ -305,7 +295,6 @@ class List(object):
     def subscribe_redirect_url(self):
         """
         Gets the subscribe_redirect_url of this List.
-
 
         :return: The subscribe_redirect_url of this List.
         :rtype: str
@@ -317,10 +306,11 @@ class List(object):
         """
         Sets the subscribe_redirect_url of this List.
 
-
         :param subscribe_redirect_url: The subscribe_redirect_url of this List.
         :type: str
         """
+        if subscribe_redirect_url is None:
+            raise ValueError("Invalid value for `subscribe_redirect_url`, must not be `None`")
 
         self._subscribe_redirect_url = subscribe_redirect_url
 
@@ -328,7 +318,6 @@ class List(object):
     def subscribe_url(self):
         """
         Gets the subscribe_url of this List.
-
 
         :return: The subscribe_url of this List.
         :rtype: str
@@ -351,7 +340,6 @@ class List(object):
         """
         Gets the twitter of this List.
 
-
         :return: The twitter of this List.
         :rtype: str
         """
@@ -361,7 +349,6 @@ class List(object):
     def twitter(self, twitter):
         """
         Sets the twitter of this List.
-
 
         :param twitter: The twitter of this List.
         :type: str
@@ -374,7 +361,6 @@ class List(object):
         """
         Gets the unsubscribe_cascades of this List.
 
-
         :return: The unsubscribe_cascades of this List.
         :rtype: bool
         """
@@ -384,7 +370,6 @@ class List(object):
     def unsubscribe_cascades(self, unsubscribe_cascades):
         """
         Sets the unsubscribe_cascades of this List.
-
 
         :param unsubscribe_cascades: The unsubscribe_cascades of this List.
         :type: bool
@@ -397,7 +382,6 @@ class List(object):
         """
         Gets the unsubscribe_redirect_url of this List.
 
-
         :return: The unsubscribe_redirect_url of this List.
         :rtype: str
         """
@@ -408,10 +392,11 @@ class List(object):
         """
         Sets the unsubscribe_redirect_url of this List.
 
-
         :param unsubscribe_redirect_url: The unsubscribe_redirect_url of this List.
         :type: str
         """
+        if unsubscribe_redirect_url is None:
+            raise ValueError("Invalid value for `unsubscribe_redirect_url`, must not be `None`")
 
         self._unsubscribe_redirect_url = unsubscribe_redirect_url
 
@@ -419,7 +404,6 @@ class List(object):
     def unsubscribe_url(self):
         """
         Gets the unsubscribe_url of this List.
-
 
         :return: The unsubscribe_url of this List.
         :rtype: str
@@ -442,7 +426,6 @@ class List(object):
         """
         Gets the website of this List.
 
-
         :return: The website of this List.
         :rtype: str
         """
@@ -452,7 +435,6 @@ class List(object):
     def website(self, website):
         """
         Sets the website of this List.
-
 
         :param website: The website of this List.
         :type: str

@@ -89,7 +89,6 @@ class User(object):
         """
         Gets the address of this User.
 
-
         :return: The address of this User.
         :rtype: str
         """
@@ -99,7 +98,6 @@ class User(object):
     def address(self, address):
         """
         Sets the address of this User.
-
 
         :param address: The address of this User.
         :type: str
@@ -112,7 +110,6 @@ class User(object):
         """
         Gets the city of this User.
 
-
         :return: The city of this User.
         :rtype: str
         """
@@ -122,7 +119,6 @@ class User(object):
     def city(self, city):
         """
         Sets the city of this User.
-
 
         :param city: The city of this User.
         :type: str
@@ -135,7 +131,6 @@ class User(object):
         """
         Gets the contact_email of this User.
 
-
         :return: The contact_email of this User.
         :rtype: str
         """
@@ -146,10 +141,11 @@ class User(object):
         """
         Sets the contact_email of this User.
 
-
         :param contact_email: The contact_email of this User.
         :type: str
         """
+        if contact_email is None:
+            raise ValueError("Invalid value for `contact_email`, must not be `None`")
 
         self._contact_email = contact_email
 
@@ -157,7 +153,6 @@ class User(object):
     def contact_name(self):
         """
         Gets the contact_name of this User.
-
 
         :return: The contact_name of this User.
         :rtype: str
@@ -169,7 +164,6 @@ class User(object):
         """
         Sets the contact_name of this User.
 
-
         :param contact_name: The contact_name of this User.
         :type: str
         """
@@ -180,7 +174,6 @@ class User(object):
     def created(self):
         """
         Gets the created of this User.
-
 
         :return: The created of this User.
         :rtype: datetime
@@ -203,7 +196,6 @@ class User(object):
         """
         Gets the logo_url of this User.
 
-
         :return: The logo_url of this User.
         :rtype: str
         """
@@ -213,7 +205,6 @@ class User(object):
     def logo_url(self, logo_url):
         """
         Sets the logo_url of this User.
-
 
         :param logo_url: The logo_url of this User.
         :type: str
@@ -226,7 +217,6 @@ class User(object):
         """
         Gets the name of this User.
 
-
         :return: The name of this User.
         :rtype: str
         """
@@ -237,10 +227,11 @@ class User(object):
         """
         Sets the name of this User.
 
-
         :param name: The name of this User.
         :type: str
         """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")
 
         self._name = name
 
@@ -248,7 +239,6 @@ class User(object):
     def partner(self):
         """
         Gets the partner of this User.
-
 
         :return: The partner of this User.
         :rtype: str
@@ -271,7 +261,6 @@ class User(object):
         """
         Gets the plan of this User.
 
-
         :return: The plan of this User.
         :rtype: str
         """
@@ -292,7 +281,6 @@ class User(object):
     def trial_expires(self):
         """
         Gets the trial_expires of this User.
-
 
         :return: The trial_expires of this User.
         :rtype: date
@@ -315,7 +303,6 @@ class User(object):
         """
         Gets the username of this User.
 
-
         :return: The username of this User.
         :rtype: str
         """
@@ -337,7 +324,6 @@ class User(object):
         """
         Gets the zip_code of this User.
 
-
         :return: The zip_code of this User.
         :rtype: str
         """
@@ -347,7 +333,6 @@ class User(object):
     def zip_code(self, zip_code):
         """
         Sets the zip_code of this User.
-
 
         :param zip_code: The zip_code of this User.
         :type: str

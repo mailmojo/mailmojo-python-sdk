@@ -59,7 +59,6 @@ class Contacts(object):
         """
         Gets the email of this Contacts.
 
-
         :return: The email of this Contacts.
         :rtype: str
         """
@@ -70,10 +69,11 @@ class Contacts(object):
         """
         Sets the email of this Contacts.
 
-
         :param email: The email of this Contacts.
         :type: str
         """
+        if email is None:
+            raise ValueError("Invalid value for `email`, must not be `None`")
 
         self._email = email
 
@@ -81,7 +81,6 @@ class Contacts(object):
     def name(self):
         """
         Gets the name of this Contacts.
-
 
         :return: The name of this Contacts.
         :rtype: str
@@ -92,7 +91,6 @@ class Contacts(object):
     def name(self, name):
         """
         Sets the name of this Contacts.
-
 
         :param name: The name of this Contacts.
         :type: str

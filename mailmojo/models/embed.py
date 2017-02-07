@@ -62,7 +62,6 @@ class Embed(object):
         """
         Gets the options of this Embed.
 
-
         :return: The options of this Embed.
         :rtype: EmbedOptions
         """
@@ -72,7 +71,6 @@ class Embed(object):
     def options(self, options):
         """
         Sets the options of this Embed.
-
 
         :param options: The options of this Embed.
         :type: EmbedOptions
@@ -85,7 +83,6 @@ class Embed(object):
         """
         Gets the session_type of this Embed.
 
-
         :return: The session_type of this Embed.
         :rtype: str
         """
@@ -95,7 +92,6 @@ class Embed(object):
     def session_type(self, session_type):
         """
         Sets the session_type of this Embed.
-
 
         :param session_type: The session_type of this Embed.
         :type: str
@@ -114,7 +110,6 @@ class Embed(object):
         """
         Gets the user_ip of this Embed.
 
-
         :return: The user_ip of this Embed.
         :rtype: str
         """
@@ -125,10 +120,11 @@ class Embed(object):
         """
         Sets the user_ip of this Embed.
 
-
         :param user_ip: The user_ip of this Embed.
         :type: str
         """
+        if user_ip is None:
+            raise ValueError("Invalid value for `user_ip`, must not be `None`")
 
         self._user_ip = user_ip
 

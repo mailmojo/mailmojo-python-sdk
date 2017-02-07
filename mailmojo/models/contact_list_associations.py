@@ -68,7 +68,6 @@ class ContactListAssociations(object):
         """
         Gets the added of this ContactListAssociations.
 
-
         :return: The added of this ContactListAssociations.
         :rtype: datetime
         """
@@ -78,7 +77,6 @@ class ContactListAssociations(object):
     def added(self, added):
         """
         Sets the added of this ContactListAssociations.
-
 
         :param added: The added of this ContactListAssociations.
         :type: datetime
@@ -91,7 +89,6 @@ class ContactListAssociations(object):
         """
         Gets the email of this ContactListAssociations.
 
-
         :return: The email of this ContactListAssociations.
         :rtype: str
         """
@@ -102,10 +99,11 @@ class ContactListAssociations(object):
         """
         Sets the email of this ContactListAssociations.
 
-
         :param email: The email of this ContactListAssociations.
         :type: str
         """
+        if email is None:
+            raise ValueError("Invalid value for `email`, must not be `None`")
 
         self._email = email
 
@@ -113,7 +111,6 @@ class ContactListAssociations(object):
     def list_id(self):
         """
         Gets the list_id of this ContactListAssociations.
-
 
         :return: The list_id of this ContactListAssociations.
         :rtype: int
@@ -125,10 +122,11 @@ class ContactListAssociations(object):
         """
         Sets the list_id of this ContactListAssociations.
 
-
         :param list_id: The list_id of this ContactListAssociations.
         :type: int
         """
+        if list_id is None:
+            raise ValueError("Invalid value for `list_id`, must not be `None`")
 
         self._list_id = list_id
 
@@ -136,7 +134,6 @@ class ContactListAssociations(object):
     def status(self):
         """
         Gets the status of this ContactListAssociations.
-
 
         :return: The status of this ContactListAssociations.
         :rtype: str
@@ -148,11 +145,10 @@ class ContactListAssociations(object):
         """
         Sets the status of this ContactListAssociations.
 
-
         :param status: The status of this ContactListAssociations.
         :type: str
         """
-        allowed_values = ["b", "d", "a", "u"]
+        allowed_values = ["a", "b", "u", "d"]
         if status not in allowed_values:
             raise ValueError(
                 "Invalid value for `status` ({0}), must be one of {1}"
@@ -166,7 +162,6 @@ class ContactListAssociations(object):
         """
         Gets the status_changed of this ContactListAssociations.
 
-
         :return: The status_changed of this ContactListAssociations.
         :rtype: datetime
         """
@@ -176,7 +171,6 @@ class ContactListAssociations(object):
     def status_changed(self, status_changed):
         """
         Sets the status_changed of this ContactListAssociations.
-
 
         :param status_changed: The status_changed of this ContactListAssociations.
         :type: datetime

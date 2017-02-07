@@ -8,7 +8,7 @@ Codegen <https://github.com/swagger-api/swagger-codegen>`__ project:
 
 -  API version: 1.0.0
 -  Package version: 0.2.0
--  Build date: 2017-01-24T15:12:37.908+01:00
+-  Build date: 2017-02-07T11:21:45.429+01:00
 
 For more information on the API, please visit https://mailmojo.gelato.io
 
@@ -68,12 +68,12 @@ then run the following:
 
     # Configure OAuth2 access token for authorization: mailmojo_auth
     mailmojo.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-    # create an instance of the API class
+    # Create an instance of the API class
     api_instance = mailmojo.ListsApi()
     list_id = 56 # int | ID of the email list to retrieve.
 
     try:
-        # Update an email list partially
+        # Update an email list partially.
         api_response = api_instance.update_list(list_id)
         pprint(api_response)
     except ApiException as e:

@@ -59,7 +59,6 @@ class ImportResult(object):
         """
         Gets the num_contacts of this ImportResult.
 
-
         :return: The num_contacts of this ImportResult.
         :rtype: int
         """
@@ -70,10 +69,11 @@ class ImportResult(object):
         """
         Sets the num_contacts of this ImportResult.
 
-
         :param num_contacts: The num_contacts of this ImportResult.
         :type: int
         """
+        if num_contacts is None:
+            raise ValueError("Invalid value for `num_contacts`, must not be `None`")
 
         self._num_contacts = num_contacts
 
@@ -81,7 +81,6 @@ class ImportResult(object):
     def num_ignored(self):
         """
         Gets the num_ignored of this ImportResult.
-
 
         :return: The num_ignored of this ImportResult.
         :rtype: int
@@ -93,10 +92,11 @@ class ImportResult(object):
         """
         Sets the num_ignored of this ImportResult.
 
-
         :param num_ignored: The num_ignored of this ImportResult.
         :type: int
         """
+        if num_ignored is None:
+            raise ValueError("Invalid value for `num_ignored`, must not be `None`")
 
         self._num_ignored = num_ignored
 

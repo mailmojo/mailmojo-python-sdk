@@ -65,7 +65,6 @@ class Subscriber(object):
         """
         Gets the email of this Subscriber.
 
-
         :return: The email of this Subscriber.
         :rtype: str
         """
@@ -76,10 +75,11 @@ class Subscriber(object):
         """
         Sets the email of this Subscriber.
 
-
         :param email: The email of this Subscriber.
         :type: str
         """
+        if email is None:
+            raise ValueError("Invalid value for `email`, must not be `None`")
 
         self._email = email
 
@@ -87,7 +87,6 @@ class Subscriber(object):
     def name(self):
         """
         Gets the name of this Subscriber.
-
 
         :return: The name of this Subscriber.
         :rtype: str
@@ -98,7 +97,6 @@ class Subscriber(object):
     def name(self, name):
         """
         Sets the name of this Subscriber.
-
 
         :param name: The name of this Subscriber.
         :type: str
@@ -111,7 +109,6 @@ class Subscriber(object):
         """
         Gets the subscribed of this Subscriber.
 
-
         :return: The subscribed of this Subscriber.
         :rtype: datetime
         """
@@ -123,7 +120,7 @@ class Subscriber(object):
         Sets the subscribed of this Subscriber.
 
         :param subscribed: The subscribed of this Subscriber.
-        :type: list[datetime]
+        :type: datetime
         """
 
         self._subscribed = subscribed
@@ -132,7 +129,6 @@ class Subscriber(object):
     def tags(self):
         """
         Gets the tags of this Subscriber.
-
 
         :return: The tags of this Subscriber.
         :rtype: list[str]
@@ -143,7 +139,6 @@ class Subscriber(object):
     def tags(self, tags):
         """
         Sets the tags of this Subscriber.
-
 
         :param tags: The tags of this Subscriber.
         :type: list[str]

@@ -68,7 +68,6 @@ class MinimalUser(object):
         """
         Gets the email of this MinimalUser.
 
-
         :return: The email of this MinimalUser.
         :rtype: str
         """
@@ -79,10 +78,11 @@ class MinimalUser(object):
         """
         Sets the email of this MinimalUser.
 
-
         :param email: The email of this MinimalUser.
         :type: str
         """
+        if email is None:
+            raise ValueError("Invalid value for `email`, must not be `None`")
 
         self._email = email
 
@@ -90,7 +90,6 @@ class MinimalUser(object):
     def logo_url(self):
         """
         Gets the logo_url of this MinimalUser.
-
 
         :return: The logo_url of this MinimalUser.
         :rtype: str
@@ -101,7 +100,6 @@ class MinimalUser(object):
     def logo_url(self, logo_url):
         """
         Sets the logo_url of this MinimalUser.
-
 
         :param logo_url: The logo_url of this MinimalUser.
         :type: str
@@ -114,7 +112,6 @@ class MinimalUser(object):
         """
         Gets the name of this MinimalUser.
 
-
         :return: The name of this MinimalUser.
         :rtype: str
         """
@@ -125,10 +122,11 @@ class MinimalUser(object):
         """
         Sets the name of this MinimalUser.
 
-
         :param name: The name of this MinimalUser.
         :type: str
         """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")
 
         self._name = name
 
@@ -136,7 +134,6 @@ class MinimalUser(object):
     def trial_days(self):
         """
         Gets the trial_days of this MinimalUser.
-
 
         :return: The trial_days of this MinimalUser.
         :rtype: int
@@ -147,7 +144,6 @@ class MinimalUser(object):
     def trial_days(self, trial_days):
         """
         Sets the trial_days of this MinimalUser.
-
 
         :param trial_days: The trial_days of this MinimalUser.
         :type: int
@@ -160,7 +156,6 @@ class MinimalUser(object):
         """
         Gets the username of this MinimalUser.
 
-
         :return: The username of this MinimalUser.
         :rtype: str
         """
@@ -171,16 +166,14 @@ class MinimalUser(object):
         """
         Sets the username of this MinimalUser.
 
-
         :param username: The username of this MinimalUser.
         :type: str
         """
-
-        if not username:
+        if username is None:
             raise ValueError("Invalid value for `username`, must not be `None`")
-        if len(username) > 32:
-            raise ValueError("Invalid value for `username`, length must be less than `32`")
-        if len(username) < 4:
+        if username is not None and len(username) > 32:
+            raise ValueError("Invalid value for `username`, length must be less than or equal to `32`")
+        if username is not None and len(username) < 4:
             raise ValueError("Invalid value for `username`, length must be greater than or equal to `4`")
 
         self._username = username

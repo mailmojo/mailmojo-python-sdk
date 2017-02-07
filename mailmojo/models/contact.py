@@ -62,7 +62,6 @@ class Contact(object):
         """
         Gets the email of this Contact.
 
-
         :return: The email of this Contact.
         :rtype: str
         """
@@ -73,10 +72,11 @@ class Contact(object):
         """
         Sets the email of this Contact.
 
-
         :param email: The email of this Contact.
         :type: str
         """
+        if email is None:
+            raise ValueError("Invalid value for `email`, must not be `None`")
 
         self._email = email
 
@@ -84,7 +84,6 @@ class Contact(object):
     def name(self):
         """
         Gets the name of this Contact.
-
 
         :return: The name of this Contact.
         :rtype: str
@@ -95,7 +94,6 @@ class Contact(object):
     def name(self, name):
         """
         Sets the name of this Contact.
-
 
         :param name: The name of this Contact.
         :type: str
@@ -108,7 +106,6 @@ class Contact(object):
         """
         Gets the tags of this Contact.
 
-
         :return: The tags of this Contact.
         :rtype: list[str]
         """
@@ -118,7 +115,6 @@ class Contact(object):
     def tags(self, tags):
         """
         Sets the tags of this Contact.
-
 
         :param tags: The tags of this Contact.
         :type: list[str]
