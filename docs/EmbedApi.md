@@ -12,26 +12,28 @@ Method | HTTP request | Description
 
 Create a new embedded application session.
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import mailmojo
 from mailmojo.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-mailmojo.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+configuration = mailmojo.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.EmbedApi()
+api_instance = mailmojo.EmbedApi(mailmojo.ApiClient(configuration))
 config = mailmojo.Embed() # Embed |  (optional)
 
-try: 
+try:
     # Create a new embedded application session.
     api_response = api_instance.create_embed_session(config=config)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling EmbedApi->create_embed_session: %s\n" % e
+    print("Exception when calling EmbedApi->create_embed_session: %s\n" % e)
 ```
 
 ### Parameters

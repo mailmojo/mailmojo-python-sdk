@@ -14,26 +14,28 @@ Method | HTTP request | Description
 
 Create an account.
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import mailmojo
 from mailmojo.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-mailmojo.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+configuration = mailmojo.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.AccountsApi()
+api_instance = mailmojo.AccountsApi(mailmojo.ApiClient(configuration))
 user = mailmojo.MinimalUser() # MinimalUser | 
 
-try: 
+try:
     # Create an account.
     api_response = api_instance.create_account(user)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountsApi->create_account: %s\n" % e
+    print("Exception when calling AccountsApi->create_account: %s\n" % e)
 ```
 
 ### Parameters
@@ -64,26 +66,28 @@ Retrieve account details.
 
 This endpoint can be used to get details about your own account, or a subuser associated with you as a partner. If the username of your current authenticated user is unknown, you may use the special username \"me\" to retrieve details about the authenticated user account. 
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import mailmojo
 from mailmojo.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-mailmojo.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+configuration = mailmojo.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.AccountsApi()
+api_instance = mailmojo.AccountsApi(mailmojo.ApiClient(configuration))
 username = 'username_example' # str | Username of the account to get details for, or the special username \"me\" to get details about your authenticated user. 
 
-try: 
+try:
     # Retrieve account details.
     api_response = api_instance.get_account_by_username(username)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountsApi->get_account_by_username: %s\n" % e
+    print("Exception when calling AccountsApi->get_account_by_username: %s\n" % e)
 ```
 
 ### Parameters
@@ -112,26 +116,28 @@ Name | Type | Description  | Notes
 
 Update account details.
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import mailmojo
 from mailmojo.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-mailmojo.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+configuration = mailmojo.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.AccountsApi()
+api_instance = mailmojo.AccountsApi(mailmojo.ApiClient(configuration))
 username = 'username_example' # str | Username of the user to update.
 
-try: 
+try:
     # Update account details.
     api_response = api_instance.update_account(username)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AccountsApi->update_account: %s\n" % e
+    print("Exception when calling AccountsApi->update_account: %s\n" % e)
 ```
 
 ### Parameters

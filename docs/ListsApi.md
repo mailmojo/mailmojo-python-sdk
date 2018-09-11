@@ -14,26 +14,28 @@ Method | HTTP request | Description
 
 Retrieve an email list.
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import mailmojo
 from mailmojo.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-mailmojo.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+configuration = mailmojo.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.ListsApi()
+api_instance = mailmojo.ListsApi(mailmojo.ApiClient(configuration))
 list_id = 56 # int | ID of the email list to retrieve.
 
-try: 
+try:
     # Retrieve an email list.
     api_response = api_instance.get_list_by_id(list_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ListsApi->get_list_by_id: %s\n" % e
+    print("Exception when calling ListsApi->get_list_by_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -62,25 +64,27 @@ Name | Type | Description  | Notes
 
 Retrieve all email lists.
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import mailmojo
 from mailmojo.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-mailmojo.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+configuration = mailmojo.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.ListsApi()
+api_instance = mailmojo.ListsApi(mailmojo.ApiClient(configuration))
 
-try: 
+try:
     # Retrieve all email lists.
     api_response = api_instance.get_lists()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ListsApi->get_lists: %s\n" % e
+    print("Exception when calling ListsApi->get_lists: %s\n" % e)
 ```
 
 ### Parameters
@@ -106,26 +110,28 @@ This endpoint does not need any parameter.
 
 Update an email list partially.
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import mailmojo
 from mailmojo.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-mailmojo.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+configuration = mailmojo.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.ListsApi()
+api_instance = mailmojo.ListsApi(mailmojo.ApiClient(configuration))
 list_id = 56 # int | ID of the email list to retrieve.
 
-try: 
+try:
     # Update an email list partially.
     api_response = api_instance.update_list(list_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ListsApi->update_list: %s\n" % e
+    print("Exception when calling ListsApi->update_list: %s\n" % e)
 ```
 
 ### Parameters
