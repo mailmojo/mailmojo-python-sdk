@@ -29,48 +29,6 @@ class TestContactsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_get_contacts(self):
-        """Test case for get_contacts
-
-        Retrieve all contacts across every list.  # noqa: E501
-        """
-        pass
-
-    def test_get_subscriber_on_list_by_email(self):
-        """Test case for get_subscriber_on_list_by_email
-
-        Retrieve a subscriber.  # noqa: E501
-        """
-        pass
-
-    def test_get_subscribers_on_list(self):
-        """Test case for get_subscribers_on_list
-
-        Retrieve subscribers on a list.  # noqa: E501
-        """
-        pass
-
-    def test_import_subscribers_to_list(self):
-        """Test case for import_subscribers_to_list
-
-        Subscribe contacts to the email list.  # noqa: E501
-        """
-        pass
-
-    def test_subscribe_contact_to_list(self):
-        """Test case for subscribe_contact_to_list
-
-        Subscribe a contact to the email list.  # noqa: E501
-        """
-        pass
-
-    def test_unsubscribe_contact_on_list_by_email(self):
-        """Test case for unsubscribe_contact_on_list_by_email
-
-        Unsubscribe a contact.  # noqa: E501
-        """
-        pass
-
     def test_update_contact(self):
         """Test case for update_contact
 

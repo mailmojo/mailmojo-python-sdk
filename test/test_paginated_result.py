@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import mailmojo
-from mailmojo.models.inline_response200 import InlineResponse200  # noqa: E501
+from mailmojo.models.paginated_result import PaginatedResult  # noqa: E501
 from mailmojo.rest import ApiException
 
 
-class TestInlineResponse200(unittest.TestCase):
-    """InlineResponse200 unit test stubs"""
+class TestPaginatedResult(unittest.TestCase):
+    """PaginatedResult unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestInlineResponse200(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testInlineResponse200(self):
-        """Test InlineResponse200"""
+    def testPaginatedResult(self):
+        """Test PaginatedResult"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = mailmojo.models.inline_response200.InlineResponse200()  # noqa: E501
+        # model = mailmojo.models.paginated_result.PaginatedResult()  # noqa: E501
         pass
 
 

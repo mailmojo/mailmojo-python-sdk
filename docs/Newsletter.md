@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **completed** | **datetime** |  | [optional] 
+**data** | **list[object]** |  | [optional] 
 **html** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
 **is_aborted** | **bool** |  | [optional] 
@@ -13,6 +14,7 @@ Name | Type | Description | Notes
 **is_sending** | **bool** |  | [optional] 
 **is_sent** | **bool** |  | [optional] 
 **list** | [**List**](List.md) |  | [optional] 
+**meta** | [**PageMeta**](PageMeta.md) |  | [optional] 
 **num_recipients** | **int** |  | [optional] 
 **plain** | **str** |  | [optional] 
 **saved** | **datetime** |  | [optional] 

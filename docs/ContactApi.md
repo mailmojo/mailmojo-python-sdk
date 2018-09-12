@@ -1,20 +1,22 @@
-# mailmojo.NewsletterApi
+# mailmojo.ContactApi
 
 All URIs are relative to *https://api.mailmojo.no/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_newsletter**](NewsletterApi.md#create_newsletter) | **POST** /newsletters/ | Create a newsletter draft.
-[**get_newsletter_by_id**](NewsletterApi.md#get_newsletter_by_id) | **GET** /newsletters/{newsletter_id}/ | Retrieve a newsletter by id.
-[**get_newsletters**](NewsletterApi.md#get_newsletters) | **GET** /newsletters/ | Retrieve all newsletters.
-[**send_newsletter**](NewsletterApi.md#send_newsletter) | **PUT** /newsletters/{newsletter_id}/send/ | Send a newsletter.
-[**test_newsletter**](NewsletterApi.md#test_newsletter) | **POST** /newsletters/{newsletter_id}/send_test/ | Send a test newsletter.
+[**get_contacts**](ContactApi.md#get_contacts) | **GET** /contacts/ | Retrieve all contacts across every list.
+[**get_subscriber_on_list_by_email**](ContactApi.md#get_subscriber_on_list_by_email) | **GET** /lists/{list_id}/subscribers/{email}/ | Retrieve a subscriber.
+[**get_subscribers_on_list**](ContactApi.md#get_subscribers_on_list) | **GET** /lists/{list_id}/subscribers/ | Retrieve subscribers on a list.
+[**subscribe_contact_to_list**](ContactApi.md#subscribe_contact_to_list) | **POST** /lists/{list_id}/subscribers/ | Subscribe a contact to the email list.
+[**unsubscribe_contact_on_list_by_email**](ContactApi.md#unsubscribe_contact_on_list_by_email) | **DELETE** /lists/{list_id}/subscribers/{email}/ | Unsubscribe a contact.
 
 
-# **create_newsletter**
-> Newsletter create_newsletter(config=config)
+# **get_contacts**
+> list[Contact] get_contacts()
 
-Create a newsletter draft.
+Retrieve all contacts across every list.
+
+This endpoint currently returns all contacts in your account *without any pagination* and should be considered EXPERIMENTAL. The response schema will change without any warning in the near future to account for pagination. 
 
 ### Example
 ```python
@@ -29,26 +31,22 @@ configuration = mailmojo.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.NewsletterApi(mailmojo.ApiClient(configuration))
-config = mailmojo.NewsletterCreation() # NewsletterCreation |  (optional)
+api_instance = mailmojo.ContactApi(mailmojo.ApiClient(configuration))
 
 try:
-    # Create a newsletter draft.
-    api_response = api_instance.create_newsletter(config=config)
+    # Retrieve all contacts across every list.
+    api_response = api_instance.get_contacts()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling NewsletterApi->create_newsletter: %s\n" % e)
+    print("Exception when calling ContactApi->get_contacts: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **config** | [**NewsletterCreation**](NewsletterCreation.md)|  | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**Newsletter**](Newsletter.md)
+[**list[Contact]**](Contact.md)
 
 ### Authorization
 
@@ -61,10 +59,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_newsletter_by_id**
-> Newsletter get_newsletter_by_id(newsletter_id)
+# **get_subscriber_on_list_by_email**
+> list[Subscriber] get_subscriber_on_list_by_email(list_id, email)
 
-Retrieve a newsletter by id.
+Retrieve a subscriber.
 
 ### Example
 ```python
@@ -79,26 +77,28 @@ configuration = mailmojo.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.NewsletterApi(mailmojo.ApiClient(configuration))
-newsletter_id = 56 # int | ID of the newsletter to retrieve.
+api_instance = mailmojo.ContactApi(mailmojo.ApiClient(configuration))
+list_id = 56 # int | ID of the email list to retrieve the subscriber from. 
+email = 'email_example' # str | Email address of the contact to retrieve.
 
 try:
-    # Retrieve a newsletter by id.
-    api_response = api_instance.get_newsletter_by_id(newsletter_id)
+    # Retrieve a subscriber.
+    api_response = api_instance.get_subscriber_on_list_by_email(list_id, email)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling NewsletterApi->get_newsletter_by_id: %s\n" % e)
+    print("Exception when calling ContactApi->get_subscriber_on_list_by_email: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **newsletter_id** | **int**| ID of the newsletter to retrieve. | 
+ **list_id** | **int**| ID of the email list to retrieve the subscriber from.  | 
+ **email** | **str**| Email address of the contact to retrieve. | 
 
 ### Return type
 
-[**Newsletter**](Newsletter.md)
+[**list[Subscriber]**](Subscriber.md)
 
 ### Authorization
 
@@ -111,10 +111,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_newsletters**
-> PaginatedResult get_newsletters(page=page, per_page=per_page)
+# **get_subscribers_on_list**
+> list[Subscriber] get_subscribers_on_list(list_id)
 
-Retrieve all newsletters.
+Retrieve subscribers on a list.
 
 ### Example
 ```python
@@ -129,28 +129,26 @@ configuration = mailmojo.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.NewsletterApi(mailmojo.ApiClient(configuration))
-page = 1 # int | The current page of items (1 indexed). (optional) (default to 1)
-per_page = 25 # int | The number of items returned per page. (optional) (default to 25)
+api_instance = mailmojo.ContactApi(mailmojo.ApiClient(configuration))
+list_id = 56 # int | ID of the email list.
 
 try:
-    # Retrieve all newsletters.
-    api_response = api_instance.get_newsletters(page=page, per_page=per_page)
+    # Retrieve subscribers on a list.
+    api_response = api_instance.get_subscribers_on_list(list_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling NewsletterApi->get_newsletters: %s\n" % e)
+    print("Exception when calling ContactApi->get_subscribers_on_list: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| The current page of items (1 indexed). | [optional] [default to 1]
- **per_page** | **int**| The number of items returned per page. | [optional] [default to 25]
+ **list_id** | **int**| ID of the email list. | 
 
 ### Return type
 
-[**PaginatedResult**](PaginatedResult.md)
+[**list[Subscriber]**](Subscriber.md)
 
 ### Authorization
 
@@ -163,10 +161,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **send_newsletter**
-> Newsletter send_newsletter(newsletter_id, config=config)
+# **subscribe_contact_to_list**
+> Contact subscribe_contact_to_list(list_id, contact=contact)
 
-Send a newsletter.
+Subscribe a contact to the email list.
 
 ### Example
 ```python
@@ -181,28 +179,28 @@ configuration = mailmojo.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.NewsletterApi(mailmojo.ApiClient(configuration))
-newsletter_id = 56 # int | ID of the newsletter to retrieve.
-config = mailmojo.NewsletterSend() # NewsletterSend |  (optional)
+api_instance = mailmojo.ContactApi(mailmojo.ApiClient(configuration))
+list_id = 56 # int | ID of the email list to subscribe to.
+contact = mailmojo.Subscriber() # Subscriber |  (optional)
 
 try:
-    # Send a newsletter.
-    api_response = api_instance.send_newsletter(newsletter_id, config=config)
+    # Subscribe a contact to the email list.
+    api_response = api_instance.subscribe_contact_to_list(list_id, contact=contact)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling NewsletterApi->send_newsletter: %s\n" % e)
+    print("Exception when calling ContactApi->subscribe_contact_to_list: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **newsletter_id** | **int**| ID of the newsletter to retrieve. | 
- **config** | [**NewsletterSend**](NewsletterSend.md)|  | [optional] 
+ **list_id** | **int**| ID of the email list to subscribe to. | 
+ **contact** | [**Subscriber**](Subscriber.md)|  | [optional] 
 
 ### Return type
 
-[**Newsletter**](Newsletter.md)
+[**Contact**](Contact.md)
 
 ### Authorization
 
@@ -215,10 +213,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **test_newsletter**
-> test_newsletter(newsletter_id, config=config)
+# **unsubscribe_contact_on_list_by_email**
+> Contact unsubscribe_contact_on_list_by_email(list_id, email)
 
-Send a test newsletter.
+Unsubscribe a contact.
 
 ### Example
 ```python
@@ -233,27 +231,28 @@ configuration = mailmojo.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.NewsletterApi(mailmojo.ApiClient(configuration))
-newsletter_id = 56 # int | ID of the newsletter to retrieve.
-config = mailmojo.NewsletterSendTest() # NewsletterSendTest |  (optional)
+api_instance = mailmojo.ContactApi(mailmojo.ApiClient(configuration))
+list_id = 56 # int | ID of the email list to unsubscribe from.
+email = 'email_example' # str | Email address of the contact to unsubscribe.
 
 try:
-    # Send a test newsletter.
-    api_instance.test_newsletter(newsletter_id, config=config)
+    # Unsubscribe a contact.
+    api_response = api_instance.unsubscribe_contact_on_list_by_email(list_id, email)
+    pprint(api_response)
 except ApiException as e:
-    print("Exception when calling NewsletterApi->test_newsletter: %s\n" % e)
+    print("Exception when calling ContactApi->unsubscribe_contact_on_list_by_email: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **newsletter_id** | **int**| ID of the newsletter to retrieve. | 
- **config** | [**NewsletterSendTest**](NewsletterSendTest.md)|  | [optional] 
+ **list_id** | **int**| ID of the email list to unsubscribe from. | 
+ **email** | **str**| Email address of the contact to unsubscribe. | 
 
 ### Return type
 
-void (empty response body)
+[**Contact**](Contact.md)
 
 ### Authorization
 

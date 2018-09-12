@@ -20,8 +20,12 @@ import mailmojo
 from mailmojo.rest import ApiException
 from pprint import pprint
 
+# Configure OAuth2 access token for authorization: mailmojo_auth
+configuration = mailmojo.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = mailmojo.AutomationApi()
+api_instance = mailmojo.AutomationApi(mailmojo.ApiClient(configuration))
 campaign_id = 56 # int | ID of the automation campaign to retrieve.
 
 try:
@@ -44,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[mailmojo_auth](../README.md#mailmojo_auth)
 
 ### HTTP request headers
 
