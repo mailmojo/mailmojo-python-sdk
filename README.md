@@ -83,7 +83,7 @@ Class | Method | HTTP request | Description
 *ContactApi* | [get_subscribers_on_list](docs/ContactApi.md#get_subscribers_on_list) | **GET** /lists/{list_id}/subscribers/ | Retrieve subscribers on a list.
 *ContactApi* | [subscribe_contact_to_list](docs/ContactApi.md#subscribe_contact_to_list) | **POST** /lists/{list_id}/subscribers/ | Subscribe a contact to the email list.
 *ContactApi* | [unsubscribe_contact_on_list_by_email](docs/ContactApi.md#unsubscribe_contact_on_list_by_email) | **DELETE** /lists/{list_id}/subscribers/{email}/ | Unsubscribe a contact.
-*ContactsApi* | [update_contact](docs/ContactsApi.md#update_contact) | **PATCH** /contacts/{email}/ | Update details about a contact.
+*ContactApi* | [update_contact](docs/ContactApi.md#update_contact) | **PATCH** /contacts/{email}/ | Update details about a contact.
 *EmbedApi* | [create_embed_session](docs/EmbedApi.md#create_embed_session) | **POST** /embed/ | Create a new embedded application session.
 *ListApi* | [get_list_by_id](docs/ListApi.md#get_list_by_id) | **GET** /lists/{list_id}/ | Retrieve an email list.
 *ListApi* | [get_lists](docs/ListApi.md#get_lists) | **GET** /lists/ | Retrieve all email lists.
