@@ -1,4 +1,4 @@
-# mailmojo.AccountApi
+# mailmojo_sdk.AccountApi
 
 All URIs are relative to *https://api.mailmojo.no/v1*
 
@@ -18,17 +18,17 @@ Create an account.
 ```python
 from __future__ import print_function
 import time
-import mailmojo
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-configuration = mailmojo.Configuration()
+configuration = mailmojo_sdk.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.AccountApi(mailmojo.ApiClient(configuration))
-user = mailmojo.MinimalUser() # MinimalUser | 
+api_instance = mailmojo_sdk.AccountApi(mailmojo_sdk.ApiClient(configuration))
+user = mailmojo_sdk.MinimalUser() # MinimalUser | 
 
 try:
     # Create an account.
@@ -70,16 +70,16 @@ This endpoint can be used to get details about your own account, or a subuser as
 ```python
 from __future__ import print_function
 import time
-import mailmojo
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-configuration = mailmojo.Configuration()
+configuration = mailmojo_sdk.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.AccountApi(mailmojo.ApiClient(configuration))
+api_instance = mailmojo_sdk.AccountApi(mailmojo_sdk.ApiClient(configuration))
 username = 'username_example' # str | Username of the account to get details for, or the special username \"me\" to get details about your authenticated user. 
 
 try:
@@ -120,16 +120,16 @@ Update account details.
 ```python
 from __future__ import print_function
 import time
-import mailmojo
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-configuration = mailmojo.Configuration()
+configuration = mailmojo_sdk.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.AccountApi(mailmojo.ApiClient(configuration))
+api_instance = mailmojo_sdk.AccountApi(mailmojo_sdk.ApiClient(configuration))
 username = 'username_example' # str | Username of the user to update.
 
 try:

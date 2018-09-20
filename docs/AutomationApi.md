@@ -1,4 +1,4 @@
-# mailmojo.AutomationApi
+# mailmojo_sdk.AutomationApi
 
 All URIs are relative to *https://api.mailmojo.no/v1*
 
@@ -16,16 +16,16 @@ Retrieve an automation campaign by id.
 ```python
 from __future__ import print_function
 import time
-import mailmojo
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-configuration = mailmojo.Configuration()
+configuration = mailmojo_sdk.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.AutomationApi(mailmojo.ApiClient(configuration))
+api_instance = mailmojo_sdk.AutomationApi(mailmojo_sdk.ApiClient(configuration))
 campaign_id = 56 # int | ID of the automation campaign to retrieve.
 
 try:

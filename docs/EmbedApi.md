@@ -1,4 +1,4 @@
-# mailmojo.EmbedApi
+# mailmojo_sdk.EmbedApi
 
 All URIs are relative to *https://api.mailmojo.no/v1*
 
@@ -16,17 +16,17 @@ Create a new embedded application session.
 ```python
 from __future__ import print_function
 import time
-import mailmojo
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-configuration = mailmojo.Configuration()
+configuration = mailmojo_sdk.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.EmbedApi(mailmojo.ApiClient(configuration))
-config = mailmojo.Embed() # Embed |  (optional)
+api_instance = mailmojo_sdk.EmbedApi(mailmojo_sdk.ApiClient(configuration))
+config = mailmojo_sdk.Embed() # Embed |  (optional)
 
 try:
     # Create a new embedded application session.

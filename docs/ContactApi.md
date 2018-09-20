@@ -1,4 +1,4 @@
-# mailmojo.ContactApi
+# mailmojo_sdk.ContactApi
 
 All URIs are relative to *https://api.mailmojo.no/v1*
 
@@ -23,16 +23,16 @@ This endpoint currently returns all contacts in your account *without any pagina
 ```python
 from __future__ import print_function
 import time
-import mailmojo
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-configuration = mailmojo.Configuration()
+configuration = mailmojo_sdk.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.ContactApi(mailmojo.ApiClient(configuration))
+api_instance = mailmojo_sdk.ContactApi(mailmojo_sdk.ApiClient(configuration))
 
 try:
     # Retrieve all contacts across every list.
@@ -69,16 +69,16 @@ Retrieve a subscriber.
 ```python
 from __future__ import print_function
 import time
-import mailmojo
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-configuration = mailmojo.Configuration()
+configuration = mailmojo_sdk.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.ContactApi(mailmojo.ApiClient(configuration))
+api_instance = mailmojo_sdk.ContactApi(mailmojo_sdk.ApiClient(configuration))
 list_id = 56 # int | ID of the email list to retrieve the subscriber from. 
 email = 'email_example' # str | Email address of the contact to retrieve.
 
@@ -121,16 +121,16 @@ Retrieve subscribers on a list.
 ```python
 from __future__ import print_function
 import time
-import mailmojo
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-configuration = mailmojo.Configuration()
+configuration = mailmojo_sdk.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.ContactApi(mailmojo.ApiClient(configuration))
+api_instance = mailmojo_sdk.ContactApi(mailmojo_sdk.ApiClient(configuration))
 list_id = 56 # int | ID of the email list.
 
 try:
@@ -171,18 +171,18 @@ Subscribe a contact to the email list.
 ```python
 from __future__ import print_function
 import time
-import mailmojo
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-configuration = mailmojo.Configuration()
+configuration = mailmojo_sdk.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.ContactApi(mailmojo.ApiClient(configuration))
+api_instance = mailmojo_sdk.ContactApi(mailmojo_sdk.ApiClient(configuration))
 list_id = 56 # int | ID of the email list to subscribe to.
-contact = mailmojo.Subscriber() # Subscriber |  (optional)
+contact = mailmojo_sdk.Subscriber() # Subscriber |  (optional)
 
 try:
     # Subscribe a contact to the email list.
@@ -223,16 +223,16 @@ Unsubscribe a contact.
 ```python
 from __future__ import print_function
 import time
-import mailmojo
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-configuration = mailmojo.Configuration()
+configuration = mailmojo_sdk.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.ContactApi(mailmojo.ApiClient(configuration))
+api_instance = mailmojo_sdk.ContactApi(mailmojo_sdk.ApiClient(configuration))
 list_id = 56 # int | ID of the email list to unsubscribe from.
 email = 'email_example' # str | Email address of the contact to unsubscribe.
 
@@ -275,18 +275,18 @@ Update details about a contact.
 ```python
 from __future__ import print_function
 import time
-import mailmojo
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-configuration = mailmojo.Configuration()
+configuration = mailmojo_sdk.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.ContactApi(mailmojo.ApiClient(configuration))
+api_instance = mailmojo_sdk.ContactApi(mailmojo_sdk.ApiClient(configuration))
 email = 'email_example' # str | Email address of contact to update.
-contact = mailmojo.MinimalContact() # MinimalContact |  (optional)
+contact = mailmojo_sdk.MinimalContact() # MinimalContact |  (optional)
 
 try:
     # Update details about a contact.

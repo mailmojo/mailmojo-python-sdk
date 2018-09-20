@@ -1,4 +1,4 @@
-# mailmojo.NewsletterApi
+# mailmojo_sdk.NewsletterApi
 
 All URIs are relative to *https://api.mailmojo.no/v1*
 
@@ -20,17 +20,17 @@ Create a newsletter draft.
 ```python
 from __future__ import print_function
 import time
-import mailmojo
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-configuration = mailmojo.Configuration()
+configuration = mailmojo_sdk.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.NewsletterApi(mailmojo.ApiClient(configuration))
-config = mailmojo.NewsletterCreation() # NewsletterCreation |  (optional)
+api_instance = mailmojo_sdk.NewsletterApi(mailmojo_sdk.ApiClient(configuration))
+config = mailmojo_sdk.NewsletterCreation() # NewsletterCreation |  (optional)
 
 try:
     # Create a newsletter draft.
@@ -70,16 +70,16 @@ Retrieve a newsletter by id.
 ```python
 from __future__ import print_function
 import time
-import mailmojo
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-configuration = mailmojo.Configuration()
+configuration = mailmojo_sdk.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.NewsletterApi(mailmojo.ApiClient(configuration))
+api_instance = mailmojo_sdk.NewsletterApi(mailmojo_sdk.ApiClient(configuration))
 newsletter_id = 56 # int | ID of the newsletter to retrieve.
 
 try:
@@ -120,16 +120,16 @@ Retrieve all newsletters.
 ```python
 from __future__ import print_function
 import time
-import mailmojo
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-configuration = mailmojo.Configuration()
+configuration = mailmojo_sdk.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.NewsletterApi(mailmojo.ApiClient(configuration))
+api_instance = mailmojo_sdk.NewsletterApi(mailmojo_sdk.ApiClient(configuration))
 page = 1 # int | The current page of items (1 indexed). (optional) (default to 1)
 per_page = 25 # int | The number of items returned per page. (optional) (default to 25)
 
@@ -172,18 +172,18 @@ Send a newsletter.
 ```python
 from __future__ import print_function
 import time
-import mailmojo
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-configuration = mailmojo.Configuration()
+configuration = mailmojo_sdk.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.NewsletterApi(mailmojo.ApiClient(configuration))
+api_instance = mailmojo_sdk.NewsletterApi(mailmojo_sdk.ApiClient(configuration))
 newsletter_id = 56 # int | ID of the newsletter to retrieve.
-config = mailmojo.NewsletterSend() # NewsletterSend |  (optional)
+config = mailmojo_sdk.NewsletterSend() # NewsletterSend |  (optional)
 
 try:
     # Send a newsletter.
@@ -224,18 +224,18 @@ Send a test newsletter.
 ```python
 from __future__ import print_function
 import time
-import mailmojo
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: mailmojo_auth
-configuration = mailmojo.Configuration()
+configuration = mailmojo_sdk.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = mailmojo.NewsletterApi(mailmojo.ApiClient(configuration))
+api_instance = mailmojo_sdk.NewsletterApi(mailmojo_sdk.ApiClient(configuration))
 newsletter_id = 56 # int | ID of the newsletter to retrieve.
-config = mailmojo.NewsletterSendTest() # NewsletterSendTest |  (optional)
+config = mailmojo_sdk.NewsletterSendTest() # NewsletterSendTest |  (optional)
 
 try:
     # Send a test newsletter.
