@@ -34,7 +34,6 @@ class EmbedOptions(object):
         'enable_dev_features': 'bool',
         'enable_newsletters_index': 'bool',
         'enable_subscription_management': 'bool',
-        'enable_theme': 'bool',
         'locale': 'str',
         'media_url': 'str'
     }
@@ -43,18 +42,16 @@ class EmbedOptions(object):
         'enable_dev_features': 'enable_dev_features',
         'enable_newsletters_index': 'enable_newsletters_index',
         'enable_subscription_management': 'enable_subscription_management',
-        'enable_theme': 'enable_theme',
         'locale': 'locale',
         'media_url': 'media_url'
     }
 
-    def __init__(self, enable_dev_features=None, enable_newsletters_index=None, enable_subscription_management=None, enable_theme=None, locale=None, media_url=None):  # noqa: E501
+    def __init__(self, enable_dev_features=None, enable_newsletters_index=None, enable_subscription_management=None, locale=None, media_url=None):  # noqa: E501
         """EmbedOptions - a model defined in Swagger"""  # noqa: E501
 
         self._enable_dev_features = None
         self._enable_newsletters_index = None
         self._enable_subscription_management = None
-        self._enable_theme = None
         self._locale = None
         self._media_url = None
         self.discriminator = None
@@ -65,8 +62,6 @@ class EmbedOptions(object):
             self.enable_newsletters_index = enable_newsletters_index
         if enable_subscription_management is not None:
             self.enable_subscription_management = enable_subscription_management
-        if enable_theme is not None:
-            self.enable_theme = enable_theme
         if locale is not None:
             self.locale = locale
         if media_url is not None:
@@ -134,27 +129,6 @@ class EmbedOptions(object):
         """
 
         self._enable_subscription_management = enable_subscription_management
-
-    @property
-    def enable_theme(self):
-        """Gets the enable_theme of this EmbedOptions.  # noqa: E501
-
-
-        :return: The enable_theme of this EmbedOptions.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_theme
-
-    @enable_theme.setter
-    def enable_theme(self, enable_theme):
-        """Sets the enable_theme of this EmbedOptions.
-
-
-        :param enable_theme: The enable_theme of this EmbedOptions.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_theme = enable_theme
 
     @property
     def locale(self):

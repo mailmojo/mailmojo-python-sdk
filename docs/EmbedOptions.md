@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 **enable_dev_features** | **bool** |  | [optional] 
 **enable_newsletters_index** | **bool** |  | [optional] 
 **enable_subscription_management** | **bool** |  | [optional] 
-**enable_theme** | **bool** |  | [optional] 
 **locale** | **str** |  | [optional] 
 **media_url** | **str** |  | [optional] 
 
