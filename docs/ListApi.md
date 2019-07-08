@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **get_list_by_id**
-> List get_list_by_id(list_id)
+> ListDetail get_list_by_id(list_id)
 
 Retrieve an email list.
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List**](List.md)
+[**ListDetail**](ListDetail.md)
 
 ### Authorization
 
@@ -111,7 +111,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_subscriber_on_list_by_email**
-> list[Subscriber] get_subscriber_on_list_by_email(list_id, email)
+> Subscriber get_subscriber_on_list_by_email(list_id, email)
 
 Retrieve a subscriber.
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[Subscriber]**](Subscriber.md)
+[**Subscriber**](Subscriber.md)
 
 ### Authorization
 
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_list**
-> List update_list(list_id)
+> ListDetail update_list(list_id)
 
 Update an email list partially.
 
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List**](List.md)
+[**ListDetail**](ListDetail.md)
 
 ### Authorization
 

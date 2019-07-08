@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] 
 **is_aborted** | **bool** |  | [optional] 
 **is_draft** | **bool** |  | [optional] 
-**is_in_campaign** | **bool** |  | [optional] [default to False]
+**is_in_campaign** | **bool** |  | [optional] 
 **is_scheduled** | **bool** |  | [optional] 
 **is_sending** | **bool** |  | [optional] 
 **is_sent** | **bool** |  | [optional] 

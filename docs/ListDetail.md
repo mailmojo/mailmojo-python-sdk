@@ -1,4 +1,4 @@
-# List
+# ListDetail
 
 ## Properties
 Name | Type | Description | Notes
@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **linkedin** | **str** |  | [optional] 
 **name** | **str** |  | 
 **pinterest** | **str** |  | [optional] 
+**segments** | [**list[ListDetailSegments]**](ListDetailSegments.md) |  | [optional] 
 **subscribe_redirect_url** | **str** |  | 
 **subscribe_url** | **str** |  | [optional] 
 **twitter** | **str** |  | [optional] 

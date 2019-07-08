@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_newsletters**
-> PaginatedResult get_newsletters(page=page, per_page=per_page)
+> PaginatedResult get_newsletters(page=page, per_page=per_page, type=type)
 
 Retrieve all newsletters.
 
@@ -132,10 +132,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = mailmojo_sdk.NewsletterApi(mailmojo_sdk.ApiClient(configuration))
 page = 1 # int | The current page of items (1 indexed). (optional) (default to 1)
 per_page = 25 # int | The number of items returned per page. (optional) (default to 25)
+type = 'type_example' # str | The type of newsletters to retrieve. Supported options are \"draft\", \"scheduled\" and \"sent\". (optional)
 
 try:
     # Retrieve all newsletters.
-    api_response = api_instance.get_newsletters(page=page, per_page=per_page)
+    api_response = api_instance.get_newsletters(page=page, per_page=per_page, type=type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling NewsletterApi->get_newsletters: %s\n" % e)
@@ -147,6 +148,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| The current page of items (1 indexed). | [optional] [default to 1]
  **per_page** | **int**| The number of items returned per page. | [optional] [default to 25]
+ **type** | **str**| The type of newsletters to retrieve. Supported options are \&quot;draft\&quot;, \&quot;scheduled\&quot; and \&quot;sent\&quot;. | [optional] 
 
 ### Return type
 

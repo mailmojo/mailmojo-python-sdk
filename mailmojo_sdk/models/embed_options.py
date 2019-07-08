@@ -31,31 +31,33 @@ class EmbedOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'content_manifest_url': 'str',
         'enable_dev_features': 'bool',
         'enable_newsletters_index': 'bool',
         'enable_subscription_management': 'bool',
-        'locale': 'str',
-        'media_url': 'str'
+        'locale': 'str'
     }
 
     attribute_map = {
+        'content_manifest_url': 'content_manifest_url',
         'enable_dev_features': 'enable_dev_features',
         'enable_newsletters_index': 'enable_newsletters_index',
         'enable_subscription_management': 'enable_subscription_management',
-        'locale': 'locale',
-        'media_url': 'media_url'
+        'locale': 'locale'
     }
 
-    def __init__(self, enable_dev_features=None, enable_newsletters_index=None, enable_subscription_management=None, locale=None, media_url=None):  # noqa: E501
+    def __init__(self, content_manifest_url=None, enable_dev_features=None, enable_newsletters_index=True, enable_subscription_management=True, locale=None):  # noqa: E501
         """EmbedOptions - a model defined in Swagger"""  # noqa: E501
 
+        self._content_manifest_url = None
         self._enable_dev_features = None
         self._enable_newsletters_index = None
         self._enable_subscription_management = None
         self._locale = None
-        self._media_url = None
         self.discriminator = None
 
+        if content_manifest_url is not None:
+            self.content_manifest_url = content_manifest_url
         if enable_dev_features is not None:
             self.enable_dev_features = enable_dev_features
         if enable_newsletters_index is not None:
@@ -64,8 +66,27 @@ class EmbedOptions(object):
             self.enable_subscription_management = enable_subscription_management
         if locale is not None:
             self.locale = locale
-        if media_url is not None:
-            self.media_url = media_url
+
+    @property
+    def content_manifest_url(self):
+        """Gets the content_manifest_url of this EmbedOptions.  # noqa: E501
+
+
+        :return: The content_manifest_url of this EmbedOptions.  # noqa: E501
+        :rtype: str
+        """
+        return self._content_manifest_url
+
+    @content_manifest_url.setter
+    def content_manifest_url(self, content_manifest_url):
+        """Sets the content_manifest_url of this EmbedOptions.
+
+
+        :param content_manifest_url: The content_manifest_url of this EmbedOptions.  # noqa: E501
+        :type: str
+        """
+
+        self._content_manifest_url = content_manifest_url
 
     @property
     def enable_dev_features(self):
@@ -156,27 +177,6 @@ class EmbedOptions(object):
             )
 
         self._locale = locale
-
-    @property
-    def media_url(self):
-        """Gets the media_url of this EmbedOptions.  # noqa: E501
-
-
-        :return: The media_url of this EmbedOptions.  # noqa: E501
-        :rtype: str
-        """
-        return self._media_url
-
-    @media_url.setter
-    def media_url(self, media_url):
-        """Sets the media_url of this EmbedOptions.
-
-
-        :param media_url: The media_url of this EmbedOptions.  # noqa: E501
-        :type: str
-        """
-
-        self._media_url = media_url
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -87,7 +87,7 @@ class Newsletter(object):
         'view_url': 'view_url'
     }
 
-    def __init__(self, completed=None, data=None, html=None, id=None, is_aborted=None, is_draft=None, is_in_campaign=False, is_scheduled=None, is_sending=None, is_sent=None, list=None, meta=None, num_recipients=None, plain=None, saved=None, screenshot_url=None, segments=None, started=None, statistics=None, subject=None, template_id=None, utm_campaign=None, view_url=None):  # noqa: E501
+    def __init__(self, completed=None, data=None, html=None, id=None, is_aborted=None, is_draft=None, is_in_campaign=None, is_scheduled=None, is_sending=None, is_sent=None, list=None, meta=None, num_recipients=None, plain=None, saved=None, screenshot_url=None, segments=None, started=None, statistics=None, subject=None, template_id=None, utm_campaign=None, view_url=None):  # noqa: E501
         """Newsletter - a model defined in Swagger"""  # noqa: E501
 
         self._completed = None

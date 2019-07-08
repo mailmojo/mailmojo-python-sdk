@@ -1,9 +1,14 @@
-# NewsletterSend
+# ListDetailSegments
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**send_date** | **str** |  | [optional] [default to '2019-07-08T11:42:32.260670+02:00']
+**created** | **datetime** |  | [optional] 
+**id** | **int** |  | [optional] 
+**label** | **str** |  | [optional] 
+**name** | **str** |  | 
+**num_contacts** | **int** |  | [optional] 
+**type** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

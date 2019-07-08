@@ -22,8 +22,12 @@ from mailmojo_sdk.models.contact_list_associations import ContactListAssociation
 from mailmojo_sdk.models.contacts import Contacts
 from mailmojo_sdk.models.embed import Embed
 from mailmojo_sdk.models.embed_options import EmbedOptions
+from mailmojo_sdk.models.form import Form
+from mailmojo_sdk.models.historical_contacts_stats import HistoricalContactsStats
 from mailmojo_sdk.models.import_result import ImportResult
 from mailmojo_sdk.models.list import List
+from mailmojo_sdk.models.list_detail import ListDetail
+from mailmojo_sdk.models.list_detail_segments import ListDetailSegments
 from mailmojo_sdk.models.minimal_contact import MinimalContact
 from mailmojo_sdk.models.minimal_user import MinimalUser
 from mailmojo_sdk.models.newsletter import Newsletter
@@ -35,4 +39,6 @@ from mailmojo_sdk.models.newsletter_statistics import NewsletterStatistics
 from mailmojo_sdk.models.page_meta import PageMeta
 from mailmojo_sdk.models.paginated_result import PaginatedResult
 from mailmojo_sdk.models.subscriber import Subscriber
+from mailmojo_sdk.models.template import Template
+from mailmojo_sdk.models.template_categories import TemplateCategories
 from mailmojo_sdk.models.user import User

@@ -135,7 +135,7 @@ class ContactApi(object):
         :param async bool
         :param int list_id: ID of the email list to retrieve the subscriber from.  (required)
         :param str email: Email address of the contact to retrieve. (required)
-        :return: list[Subscriber]
+        :return: Subscriber
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -157,7 +157,7 @@ class ContactApi(object):
         :param async bool
         :param int list_id: ID of the email list to retrieve the subscriber from.  (required)
         :param str email: Email address of the contact to retrieve. (required)
-        :return: list[Subscriber]
+        :return: Subscriber
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -221,7 +221,7 @@ class ContactApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Subscriber]',  # noqa: E501
+            response_type='Subscriber',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **created** | **datetime** |  | [optional] 
 **logo_url** | **str** |  | [optional] 
 **name** | **str** |  | 
+**num_contacts** | **int** |  | [optional] 
 **partner** | **str** |  | [optional] 
 **plan** | **str** |  | [optional] 
 **trial_expires** | **date** |  | [optional] 

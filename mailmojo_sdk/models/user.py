@@ -38,6 +38,7 @@ class User(object):
         'created': 'datetime',
         'logo_url': 'str',
         'name': 'str',
+        'num_contacts': 'int',
         'partner': 'str',
         'plan': 'str',
         'trial_expires': 'date',
@@ -53,6 +54,7 @@ class User(object):
         'created': 'created',
         'logo_url': 'logo_url',
         'name': 'name',
+        'num_contacts': 'num_contacts',
         'partner': 'partner',
         'plan': 'plan',
         'trial_expires': 'trial_expires',
@@ -60,7 +62,7 @@ class User(object):
         'zip_code': 'zip_code'
     }
 
-    def __init__(self, address=None, city=None, contact_email=None, contact_name=None, created=None, logo_url=None, name=None, partner=None, plan=None, trial_expires=None, username=None, zip_code=None):  # noqa: E501
+    def __init__(self, address=None, city=None, contact_email=None, contact_name=None, created=None, logo_url=None, name=None, num_contacts=None, partner=None, plan=None, trial_expires=None, username=None, zip_code=None):  # noqa: E501
         """User - a model defined in Swagger"""  # noqa: E501
 
         self._address = None
@@ -70,6 +72,7 @@ class User(object):
         self._created = None
         self._logo_url = None
         self._name = None
+        self._num_contacts = None
         self._partner = None
         self._plan = None
         self._trial_expires = None
@@ -89,6 +92,8 @@ class User(object):
         if logo_url is not None:
             self.logo_url = logo_url
         self.name = name
+        if num_contacts is not None:
+            self.num_contacts = num_contacts
         if partner is not None:
             self.partner = partner
         if plan is not None:
@@ -250,6 +255,27 @@ class User(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def num_contacts(self):
+        """Gets the num_contacts of this User.  # noqa: E501
+
+
+        :return: The num_contacts of this User.  # noqa: E501
+        :rtype: int
+        """
+        return self._num_contacts
+
+    @num_contacts.setter
+    def num_contacts(self, num_contacts):
+        """Sets the num_contacts of this User.
+
+
+        :param num_contacts: The num_contacts of this User.  # noqa: E501
+        :type: int
+        """
+
+        self._num_contacts = num_contacts
 
     @property
     def partner(self):

@@ -234,6 +234,7 @@ class NewsletterApi(object):
         :param async bool
         :param int page: The current page of items (1 indexed).
         :param int per_page: The number of items returned per page.
+        :param str type: The type of newsletters to retrieve. Supported options are \"draft\", \"scheduled\" and \"sent\".
         :return: PaginatedResult
                  If the method is called asynchronously,
                  returns the request thread.
@@ -256,12 +257,13 @@ class NewsletterApi(object):
         :param async bool
         :param int page: The current page of items (1 indexed).
         :param int per_page: The number of items returned per page.
+        :param str type: The type of newsletters to retrieve. Supported options are \"draft\", \"scheduled\" and \"sent\".
         :return: PaginatedResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'per_page']  # noqa: E501
+        all_params = ['page', 'per_page', 'type']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -286,6 +288,8 @@ class NewsletterApi(object):
             query_params.append(('page', params['page']))  # noqa: E501
         if 'per_page' in params:
             query_params.append(('per_page', params['per_page']))  # noqa: E501
+        if 'type' in params:
+            query_params.append(('type', params['type']))  # noqa: E501
 
         header_params = {}
 

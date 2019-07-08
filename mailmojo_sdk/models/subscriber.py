@@ -50,7 +50,7 @@ class Subscriber(object):
         'tags': 'tags'
     }
 
-    def __init__(self, email=None, first_name=None, force_subscribe=None, last_name=None, name=None, subscribed=None, tags=None):  # noqa: E501
+    def __init__(self, email=None, first_name=None, force_subscribe=True, last_name=None, name=None, subscribed=None, tags=None):  # noqa: E501
         """Subscriber - a model defined in Swagger"""  # noqa: E501
 
         self._email = None
