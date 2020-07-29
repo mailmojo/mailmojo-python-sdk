@@ -47,7 +47,8 @@ class Contacts(object):
         self._name = None
         self.discriminator = None
 
-        self.email = email
+        if email is not None:
+            self.email = email
         if name is not None:
             self.name = name
 
@@ -69,8 +70,6 @@ class Contacts(object):
         :param email: The email of this Contacts.  # noqa: E501
         :type: str
         """
-        if email is None:
-            raise ValueError("Invalid value for `email`, must not be `None`")  # noqa: E501
 
         self._email = email
 
@@ -116,6 +115,9 @@ class Contacts(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Contacts, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

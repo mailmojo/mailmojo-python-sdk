@@ -90,6 +90,9 @@ class NewsletterSendTest(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(NewsletterSendTest, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

@@ -15,16 +15,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import mailmojo
-from mailmojo.api.embed_api import EmbedApi  # noqa: E501
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.api.embed_api import EmbedApi  # noqa: E501
+from mailmojo_sdk.rest import ApiException
 
 
 class TestEmbedApi(unittest.TestCase):
     """EmbedApi unit test stubs"""
 
     def setUp(self):
-        self.api = mailmojo.api.embed_api.EmbedApi()  # noqa: E501
+        self.api = mailmojo_sdk.api.embed_api.EmbedApi()  # noqa: E501
 
     def tearDown(self):
         pass

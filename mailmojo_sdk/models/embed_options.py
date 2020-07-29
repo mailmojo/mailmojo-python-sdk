@@ -31,152 +31,14 @@ class EmbedOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'content_manifest_url': 'str',
-        'enable_dev_features': 'bool',
-        'enable_newsletters_index': 'bool',
-        'enable_subscription_management': 'bool',
-        'locale': 'str'
     }
 
     attribute_map = {
-        'content_manifest_url': 'content_manifest_url',
-        'enable_dev_features': 'enable_dev_features',
-        'enable_newsletters_index': 'enable_newsletters_index',
-        'enable_subscription_management': 'enable_subscription_management',
-        'locale': 'locale'
     }
 
-    def __init__(self, content_manifest_url=None, enable_dev_features=None, enable_newsletters_index=True, enable_subscription_management=True, locale=None):  # noqa: E501
+    def __init__(self):  # noqa: E501
         """EmbedOptions - a model defined in Swagger"""  # noqa: E501
-
-        self._content_manifest_url = None
-        self._enable_dev_features = None
-        self._enable_newsletters_index = None
-        self._enable_subscription_management = None
-        self._locale = None
         self.discriminator = None
-
-        if content_manifest_url is not None:
-            self.content_manifest_url = content_manifest_url
-        if enable_dev_features is not None:
-            self.enable_dev_features = enable_dev_features
-        if enable_newsletters_index is not None:
-            self.enable_newsletters_index = enable_newsletters_index
-        if enable_subscription_management is not None:
-            self.enable_subscription_management = enable_subscription_management
-        if locale is not None:
-            self.locale = locale
-
-    @property
-    def content_manifest_url(self):
-        """Gets the content_manifest_url of this EmbedOptions.  # noqa: E501
-
-
-        :return: The content_manifest_url of this EmbedOptions.  # noqa: E501
-        :rtype: str
-        """
-        return self._content_manifest_url
-
-    @content_manifest_url.setter
-    def content_manifest_url(self, content_manifest_url):
-        """Sets the content_manifest_url of this EmbedOptions.
-
-
-        :param content_manifest_url: The content_manifest_url of this EmbedOptions.  # noqa: E501
-        :type: str
-        """
-
-        self._content_manifest_url = content_manifest_url
-
-    @property
-    def enable_dev_features(self):
-        """Gets the enable_dev_features of this EmbedOptions.  # noqa: E501
-
-
-        :return: The enable_dev_features of this EmbedOptions.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_dev_features
-
-    @enable_dev_features.setter
-    def enable_dev_features(self, enable_dev_features):
-        """Sets the enable_dev_features of this EmbedOptions.
-
-
-        :param enable_dev_features: The enable_dev_features of this EmbedOptions.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_dev_features = enable_dev_features
-
-    @property
-    def enable_newsletters_index(self):
-        """Gets the enable_newsletters_index of this EmbedOptions.  # noqa: E501
-
-
-        :return: The enable_newsletters_index of this EmbedOptions.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_newsletters_index
-
-    @enable_newsletters_index.setter
-    def enable_newsletters_index(self, enable_newsletters_index):
-        """Sets the enable_newsletters_index of this EmbedOptions.
-
-
-        :param enable_newsletters_index: The enable_newsletters_index of this EmbedOptions.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_newsletters_index = enable_newsletters_index
-
-    @property
-    def enable_subscription_management(self):
-        """Gets the enable_subscription_management of this EmbedOptions.  # noqa: E501
-
-
-        :return: The enable_subscription_management of this EmbedOptions.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_subscription_management
-
-    @enable_subscription_management.setter
-    def enable_subscription_management(self, enable_subscription_management):
-        """Sets the enable_subscription_management of this EmbedOptions.
-
-
-        :param enable_subscription_management: The enable_subscription_management of this EmbedOptions.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_subscription_management = enable_subscription_management
-
-    @property
-    def locale(self):
-        """Gets the locale of this EmbedOptions.  # noqa: E501
-
-
-        :return: The locale of this EmbedOptions.  # noqa: E501
-        :rtype: str
-        """
-        return self._locale
-
-    @locale.setter
-    def locale(self, locale):
-        """Sets the locale of this EmbedOptions.
-
-
-        :param locale: The locale of this EmbedOptions.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["en_US", "nb_NO", "sv_SE"]  # noqa: E501
-        if locale not in allowed_values:
-            raise ValueError(
-                "Invalid value for `locale` ({0}), must be one of {1}"  # noqa: E501
-                .format(locale, allowed_values)
-            )
-
-        self._locale = locale
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -199,6 +61,9 @@ class EmbedOptions(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(EmbedOptions, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

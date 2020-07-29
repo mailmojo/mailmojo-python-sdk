@@ -31,14 +31,14 @@ class NewsletterSend(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'send_date': 'str'
+        'send_date': 'datetime'
     }
 
     attribute_map = {
         'send_date': 'send_date'
     }
 
-    def __init__(self, send_date='2019-07-08T11:42:32.260670+02:00'):  # noqa: E501
+    def __init__(self, send_date=None):  # noqa: E501
         """NewsletterSend - a model defined in Swagger"""  # noqa: E501
 
         self._send_date = None
@@ -53,7 +53,7 @@ class NewsletterSend(object):
 
 
         :return: The send_date of this NewsletterSend.  # noqa: E501
-        :rtype: str
+        :rtype: datetime
         """
         return self._send_date
 
@@ -63,7 +63,7 @@ class NewsletterSend(object):
 
 
         :param send_date: The send_date of this NewsletterSend.  # noqa: E501
-        :type: str
+        :type: datetime
         """
 
         self._send_date = send_date
@@ -89,6 +89,9 @@ class NewsletterSend(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(NewsletterSend, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

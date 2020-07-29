@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import mailmojo
-from mailmojo.models.list import List  # noqa: E501
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.models.list import List  # noqa: E501
+from mailmojo_sdk.rest import ApiException
 
 
 class TestList(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestList(unittest.TestCase):
     def testList(self):
         """Test List"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = mailmojo.models.list.List()  # noqa: E501
+        # model = mailmojo_sdk.models.list.List()  # noqa: E501
         pass
 
 

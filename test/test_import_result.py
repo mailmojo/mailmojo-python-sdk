@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import mailmojo
-from mailmojo.models.import_result import ImportResult  # noqa: E501
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.models.import_result import ImportResult  # noqa: E501
+from mailmojo_sdk.rest import ApiException
 
 
 class TestImportResult(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestImportResult(unittest.TestCase):
     def testImportResult(self):
         """Test ImportResult"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = mailmojo.models.import_result.ImportResult()  # noqa: E501
+        # model = mailmojo_sdk.models.import_result.ImportResult()  # noqa: E501
         pass
 
 

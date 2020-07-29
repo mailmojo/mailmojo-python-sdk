@@ -15,24 +15,38 @@ from __future__ import absolute_import
 
 import unittest
 
-import mailmojo
-from mailmojo.api.contact_api import ContactApi  # noqa: E501
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.api.contact_api import ContactApi  # noqa: E501
+from mailmojo_sdk.rest import ApiException
 
 
 class TestContactApi(unittest.TestCase):
     """ContactApi unit test stubs"""
 
     def setUp(self):
-        self.api = mailmojo.api.contact_api.ContactApi()  # noqa: E501
+        self.api = mailmojo_sdk.api.contact_api.ContactApi()  # noqa: E501
 
     def tearDown(self):
+        pass
+
+    def test_get_contact_by_email(self):
+        """Test case for get_contact_by_email
+
+        Retrieve a contact in any list by email.  # noqa: E501
+        """
         pass
 
     def test_get_contacts(self):
         """Test case for get_contacts
 
         Retrieve all contacts across every list.  # noqa: E501
+        """
+        pass
+
+    def test_get_historical_contact_stats(self):
+        """Test case for get_historical_contact_stats
+
+        Retrieve historical stats over contacts across every list.  # noqa: E501
         """
         pass
 
@@ -50,6 +64,13 @@ class TestContactApi(unittest.TestCase):
         """
         pass
 
+    def test_get_unsubscribed_on_list(self):
+        """Test case for get_unsubscribed_on_list
+
+        Retrieve unsubscribed contacts on a list.  # noqa: E501
+        """
+        pass
+
     def test_subscribe_contact_to_list(self):
         """Test case for subscribe_contact_to_list
 
@@ -61,6 +82,13 @@ class TestContactApi(unittest.TestCase):
         """Test case for unsubscribe_contact_on_list_by_email
 
         Unsubscribe a contact.  # noqa: E501
+        """
+        pass
+
+    def test_update_contact(self):
+        """Test case for update_contact
+
+        Update details about a contact.  # noqa: E501
         """
         pass
 

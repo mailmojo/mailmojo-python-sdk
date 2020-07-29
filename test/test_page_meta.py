@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import mailmojo
-from mailmojo.models.page_meta import PageMeta  # noqa: E501
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.models.page_meta import PageMeta  # noqa: E501
+from mailmojo_sdk.rest import ApiException
 
 
 class TestPageMeta(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestPageMeta(unittest.TestCase):
     def testPageMeta(self):
         """Test PageMeta"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = mailmojo.models.page_meta.PageMeta()  # noqa: E501
+        # model = mailmojo_sdk.models.page_meta.PageMeta()  # noqa: E501
         pass
 
 

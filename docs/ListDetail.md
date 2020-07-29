@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **linkedin** | **str** |  | [optional] 
 **name** | **str** |  | 
 **pinterest** | **str** |  | [optional] 
-**segments** | [**list[ListDetailSegments]**](ListDetailSegments.md) |  | [optional] 
+**segments** | [**list[Segment]**](Segment.md) |  | [optional] 
 **subscribe_redirect_url** | **str** |  | 
 **subscribe_url** | **str** |  | [optional] 
 **twitter** | **str** |  | [optional] 

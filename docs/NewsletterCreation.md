@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**html** | **str** |  | [optional] 
+**html** | **object** |  | [optional] 
 **html_url** | **str** |  | [optional] 
 **list_id** | **int** |  | 
-**segment_ids** | **list[str]** |  | [optional] 
+**segment_ids** | **list[object]** |  | [optional] 
 **subject** | **str** |  | 
 **template_id** | **int** |  | [optional] 
 **utm_campaign** | **str** |  | [optional] 

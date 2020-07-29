@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import mailmojo
-from mailmojo.models.campaign_detail import CampaignDetail  # noqa: E501
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.models.campaign_detail import CampaignDetail  # noqa: E501
+from mailmojo_sdk.rest import ApiException
 
 
 class TestCampaignDetail(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestCampaignDetail(unittest.TestCase):
     def testCampaignDetail(self):
         """Test CampaignDetail"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = mailmojo.models.campaign_detail.CampaignDetail()  # noqa: E501
+        # model = mailmojo_sdk.models.campaign_detail.CampaignDetail()  # noqa: E501
         pass
 
 

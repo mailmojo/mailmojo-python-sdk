@@ -36,6 +36,7 @@ class User(object):
         'contact_email': 'str',
         'contact_name': 'str',
         'created': 'datetime',
+        'logo': 'object',
         'logo_url': 'str',
         'name': 'str',
         'num_contacts': 'int',
@@ -52,6 +53,7 @@ class User(object):
         'contact_email': 'contact_email',
         'contact_name': 'contact_name',
         'created': 'created',
+        'logo': 'logo',
         'logo_url': 'logo_url',
         'name': 'name',
         'num_contacts': 'num_contacts',
@@ -62,7 +64,7 @@ class User(object):
         'zip_code': 'zip_code'
     }
 
-    def __init__(self, address=None, city=None, contact_email=None, contact_name=None, created=None, logo_url=None, name=None, num_contacts=None, partner=None, plan=None, trial_expires=None, username=None, zip_code=None):  # noqa: E501
+    def __init__(self, address=None, city=None, contact_email=None, contact_name=None, created=None, logo=None, logo_url=None, name=None, num_contacts=None, partner=None, plan=None, trial_expires=None, username=None, zip_code=None):  # noqa: E501
         """User - a model defined in Swagger"""  # noqa: E501
 
         self._address = None
@@ -70,6 +72,7 @@ class User(object):
         self._contact_email = None
         self._contact_name = None
         self._created = None
+        self._logo = None
         self._logo_url = None
         self._name = None
         self._num_contacts = None
@@ -89,6 +92,8 @@ class User(object):
             self.contact_name = contact_name
         if created is not None:
             self.created = created
+        if logo is not None:
+            self.logo = logo
         if logo_url is not None:
             self.logo_url = logo_url
         self.name = name
@@ -211,6 +216,27 @@ class User(object):
         """
 
         self._created = created
+
+    @property
+    def logo(self):
+        """Gets the logo of this User.  # noqa: E501
+
+
+        :return: The logo of this User.  # noqa: E501
+        :rtype: object
+        """
+        return self._logo
+
+    @logo.setter
+    def logo(self, logo):
+        """Sets the logo of this User.
+
+
+        :param logo: The logo of this User.  # noqa: E501
+        :type: object
+        """
+
+        self._logo = logo
 
     @property
     def logo_url(self):
@@ -403,6 +429,9 @@ class User(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(User, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

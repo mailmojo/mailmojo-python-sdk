@@ -1,10 +1,10 @@
 # mailmojo_sdk.TemplateApi
 
-All URIs are relative to *https://api.mailmojo.no/v1*
+All URIs are relative to *https://api.mailmojo.no*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_templates**](TemplateApi.md#get_templates) | **GET** /templates/ | Retrieve all templates.
+[**get_templates**](TemplateApi.md#get_templates) | **GET** /v1/templates/ | Retrieve all templates.
 
 
 # **get_templates**

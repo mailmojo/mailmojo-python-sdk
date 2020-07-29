@@ -29,10 +29,31 @@ class TestFormApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_form_add_subscriber(self):
+        """Test case for form_add_subscriber
+
+        Add a subscriber through a form and track the conversion.  # noqa: E501
+        """
+        pass
+
+    def test_get_form_by_id(self):
+        """Test case for get_form_by_id
+
+        Retrieve a form.  # noqa: E501
+        """
+        pass
+
     def test_get_forms(self):
         """Test case for get_forms
 
         Retrieve all forms.  # noqa: E501
+        """
+        pass
+
+    def test_track_form_view(self):
+        """Test case for track_form_view
+
+        Track a view of a form.  # noqa: E501
         """
         pass
 

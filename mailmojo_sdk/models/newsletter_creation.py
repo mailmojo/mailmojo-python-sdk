@@ -31,10 +31,10 @@ class NewsletterCreation(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'html': 'str',
+        'html': 'object',
         'html_url': 'str',
         'list_id': 'int',
-        'segment_ids': 'list[str]',
+        'segment_ids': 'list[object]',
         'subject': 'str',
         'template_id': 'int',
         'utm_campaign': 'str'
@@ -81,7 +81,7 @@ class NewsletterCreation(object):
 
 
         :return: The html of this NewsletterCreation.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._html
 
@@ -91,7 +91,7 @@ class NewsletterCreation(object):
 
 
         :param html: The html of this NewsletterCreation.  # noqa: E501
-        :type: str
+        :type: object
         """
 
         self._html = html
@@ -146,7 +146,7 @@ class NewsletterCreation(object):
 
 
         :return: The segment_ids of this NewsletterCreation.  # noqa: E501
-        :rtype: list[str]
+        :rtype: list[object]
         """
         return self._segment_ids
 
@@ -156,7 +156,7 @@ class NewsletterCreation(object):
 
 
         :param segment_ids: The segment_ids of this NewsletterCreation.  # noqa: E501
-        :type: list[str]
+        :type: list[object]
         """
 
         self._segment_ids = segment_ids
@@ -247,6 +247,9 @@ class NewsletterCreation(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(NewsletterCreation, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

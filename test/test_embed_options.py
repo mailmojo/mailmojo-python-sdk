@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import mailmojo
-from mailmojo.models.embed_options import EmbedOptions  # noqa: E501
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.models.embed_options import EmbedOptions  # noqa: E501
+from mailmojo_sdk.rest import ApiException
 
 
 class TestEmbedOptions(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestEmbedOptions(unittest.TestCase):
     def testEmbedOptions(self):
         """Test EmbedOptions"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = mailmojo.models.embed_options.EmbedOptions()  # noqa: E501
+        # model = mailmojo_sdk.models.embed_options.EmbedOptions()  # noqa: E501
         pass
 
 

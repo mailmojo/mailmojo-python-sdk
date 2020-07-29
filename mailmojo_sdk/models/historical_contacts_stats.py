@@ -219,6 +219,9 @@ class HistoricalContactsStats(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(HistoricalContactsStats, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

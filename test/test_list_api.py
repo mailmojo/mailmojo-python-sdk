@@ -15,16 +15,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import mailmojo
-from mailmojo.api.list_api import ListApi  # noqa: E501
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.api.list_api import ListApi  # noqa: E501
+from mailmojo_sdk.rest import ApiException
 
 
 class TestListApi(unittest.TestCase):
     """ListApi unit test stubs"""
 
     def setUp(self):
-        self.api = mailmojo.api.list_api.ListApi()  # noqa: E501
+        self.api = mailmojo_sdk.api.list_api.ListApi()  # noqa: E501
 
     def tearDown(self):
         pass
@@ -54,6 +54,13 @@ class TestListApi(unittest.TestCase):
         """Test case for get_subscribers_on_list
 
         Retrieve subscribers on a list.  # noqa: E501
+        """
+        pass
+
+    def test_get_unsubscribed_on_list(self):
+        """Test case for get_unsubscribed_on_list
+
+        Retrieve unsubscribed contacts on a list.  # noqa: E501
         """
         pass
 

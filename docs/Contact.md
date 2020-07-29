@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **email** | **str** |  | 
 **first_name** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 
-**list_associations** | [**list[ContactListAssociations]**](ContactListAssociations.md) |  | [optional] 
+**list_associations** | [**list[ContactList]**](ContactList.md) |  | [optional] 
 **name** | **str** | Full name of the contact. Will, if present, take precedence over first_name and last_name. | [optional] 
 **status** | **str** |  | [optional] 
 **status_changed** | **datetime** |  | [optional] 

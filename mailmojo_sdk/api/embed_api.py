@@ -33,44 +33,44 @@ class EmbedApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_embed_session(self, **kwargs):  # noqa: E501
+    def create_embed_session(self, embed, **kwargs):  # noqa: E501
         """Create a new embedded application session.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_embed_session(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_embed_session(embed, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param Embed config:
+        :param async_req bool
+        :param Embed embed: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
-            return self.create_embed_session_with_http_info(**kwargs)  # noqa: E501
+        if kwargs.get('async_req'):
+            return self.create_embed_session_with_http_info(embed, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_embed_session_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.create_embed_session_with_http_info(embed, **kwargs)  # noqa: E501
             return data
 
-    def create_embed_session_with_http_info(self, **kwargs):  # noqa: E501
+    def create_embed_session_with_http_info(self, embed, **kwargs):  # noqa: E501
         """Create a new embedded application session.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_embed_session_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_embed_session_with_http_info(embed, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param Embed config:
+        :param async_req bool
+        :param Embed embed: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['config']  # noqa: E501
-        all_params.append('async')
+        all_params = ['embed']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -84,6 +84,10 @@ class EmbedApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'embed' is set
+        if ('embed' not in params or
+                params['embed'] is None):
+            raise ValueError("Missing the required parameter `embed` when calling `create_embed_session`")  # noqa: E501
 
         collection_formats = {}
 
@@ -97,8 +101,8 @@ class EmbedApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'config' in params:
-            body_params = params['config']
+        if 'embed' in params:
+            body_params = params['embed']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['text/html'])  # noqa: E501
@@ -111,7 +115,7 @@ class EmbedApi(object):
         auth_settings = ['mailmojo_auth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/embed/', 'POST',
+            '/v1/embed/', 'POST',
             path_params,
             query_params,
             header_params,
@@ -120,7 +124,7 @@ class EmbedApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

@@ -31,20 +31,23 @@ class Form(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'config': 'str',
+        'config': 'object',
         'confirmation_html': 'str',
-        'created_at': 'str',
+        'created_at': 'datetime',
         'editor_confirmation_html': 'str',
         'editor_html': 'str',
-        'fields': 'str',
+        'expired_at': 'datetime',
+        'fields': 'object',
         'final_confirmation_html': 'str',
         'final_html': 'str',
         'html': 'str',
         'id': 'int',
         'lid': 'int',
+        'name': 'str',
+        'published_at': 'datetime',
         'template_id': 'int',
         'type': 'str',
-        'updated_at': 'str'
+        'updated_at': 'datetime'
     }
 
     attribute_map = {
@@ -53,18 +56,21 @@ class Form(object):
         'created_at': 'created_at',
         'editor_confirmation_html': 'editor_confirmation_html',
         'editor_html': 'editor_html',
+        'expired_at': 'expired_at',
         'fields': 'fields',
         'final_confirmation_html': 'final_confirmation_html',
         'final_html': 'final_html',
         'html': 'html',
         'id': 'id',
         'lid': 'lid',
+        'name': 'name',
+        'published_at': 'published_at',
         'template_id': 'template_id',
         'type': 'type',
         'updated_at': 'updated_at'
     }
 
-    def __init__(self, config=None, confirmation_html=None, created_at=None, editor_confirmation_html=None, editor_html=None, fields=None, final_confirmation_html=None, final_html=None, html=None, id=None, lid=None, template_id=None, type=None, updated_at=None):  # noqa: E501
+    def __init__(self, config=None, confirmation_html=None, created_at=None, editor_confirmation_html=None, editor_html=None, expired_at=None, fields=None, final_confirmation_html=None, final_html=None, html=None, id=None, lid=None, name=None, published_at=None, template_id=None, type=None, updated_at=None):  # noqa: E501
         """Form - a model defined in Swagger"""  # noqa: E501
 
         self._config = None
@@ -72,12 +78,15 @@ class Form(object):
         self._created_at = None
         self._editor_confirmation_html = None
         self._editor_html = None
+        self._expired_at = None
         self._fields = None
         self._final_confirmation_html = None
         self._final_html = None
         self._html = None
         self._id = None
         self._lid = None
+        self._name = None
+        self._published_at = None
         self._template_id = None
         self._type = None
         self._updated_at = None
@@ -91,6 +100,8 @@ class Form(object):
             self.editor_confirmation_html = editor_confirmation_html
         if editor_html is not None:
             self.editor_html = editor_html
+        if expired_at is not None:
+            self.expired_at = expired_at
         self.fields = fields
         if final_confirmation_html is not None:
             self.final_confirmation_html = final_confirmation_html
@@ -100,6 +111,9 @@ class Form(object):
         if id is not None:
             self.id = id
         self.lid = lid
+        self.name = name
+        if published_at is not None:
+            self.published_at = published_at
         if template_id is not None:
             self.template_id = template_id
         self.type = type
@@ -112,7 +126,7 @@ class Form(object):
 
 
         :return: The config of this Form.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._config
 
@@ -122,7 +136,7 @@ class Form(object):
 
 
         :param config: The config of this Form.  # noqa: E501
-        :type: str
+        :type: object
         """
         if config is None:
             raise ValueError("Invalid value for `config`, must not be `None`")  # noqa: E501
@@ -158,7 +172,7 @@ class Form(object):
 
 
         :return: The created_at of this Form.  # noqa: E501
-        :rtype: str
+        :rtype: datetime
         """
         return self._created_at
 
@@ -168,7 +182,7 @@ class Form(object):
 
 
         :param created_at: The created_at of this Form.  # noqa: E501
-        :type: str
+        :type: datetime
         """
 
         self._created_at = created_at
@@ -216,12 +230,33 @@ class Form(object):
         self._editor_html = editor_html
 
     @property
+    def expired_at(self):
+        """Gets the expired_at of this Form.  # noqa: E501
+
+
+        :return: The expired_at of this Form.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._expired_at
+
+    @expired_at.setter
+    def expired_at(self, expired_at):
+        """Sets the expired_at of this Form.
+
+
+        :param expired_at: The expired_at of this Form.  # noqa: E501
+        :type: datetime
+        """
+
+        self._expired_at = expired_at
+
+    @property
     def fields(self):
         """Gets the fields of this Form.  # noqa: E501
 
 
         :return: The fields of this Form.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._fields
 
@@ -231,7 +266,7 @@ class Form(object):
 
 
         :param fields: The fields of this Form.  # noqa: E501
-        :type: str
+        :type: object
         """
         if fields is None:
             raise ValueError("Invalid value for `fields`, must not be `None`")  # noqa: E501
@@ -348,6 +383,50 @@ class Form(object):
         self._lid = lid
 
     @property
+    def name(self):
+        """Gets the name of this Form.  # noqa: E501
+
+
+        :return: The name of this Form.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this Form.
+
+
+        :param name: The name of this Form.  # noqa: E501
+        :type: str
+        """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
+
+        self._name = name
+
+    @property
+    def published_at(self):
+        """Gets the published_at of this Form.  # noqa: E501
+
+
+        :return: The published_at of this Form.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._published_at
+
+    @published_at.setter
+    def published_at(self, published_at):
+        """Sets the published_at of this Form.
+
+
+        :param published_at: The published_at of this Form.  # noqa: E501
+        :type: datetime
+        """
+
+        self._published_at = published_at
+
+    @property
     def template_id(self):
         """Gets the template_id of this Form.  # noqa: E501
 
@@ -388,7 +467,7 @@ class Form(object):
         """
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
-        allowed_values = ["subscribe", "subscribe_popup", "unsubscribe", "profile", "forward"]  # noqa: E501
+        allowed_values = ["embedded", "subscribe", "subscribe_popup", "unsubscribe", "profile", "forward"]  # noqa: E501
         if type not in allowed_values:
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
@@ -403,7 +482,7 @@ class Form(object):
 
 
         :return: The updated_at of this Form.  # noqa: E501
-        :rtype: str
+        :rtype: datetime
         """
         return self._updated_at
 
@@ -413,7 +492,7 @@ class Form(object):
 
 
         :param updated_at: The updated_at of this Form.  # noqa: E501
-        :type: str
+        :type: datetime
         """
 
         self._updated_at = updated_at
@@ -439,6 +518,9 @@ class Form(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Form, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

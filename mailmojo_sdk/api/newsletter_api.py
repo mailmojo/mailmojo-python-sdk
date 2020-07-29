@@ -33,44 +33,141 @@ class NewsletterApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_newsletter(self, **kwargs):  # noqa: E501
-        """Create a newsletter draft.  # noqa: E501
+    def cancel_newsletter(self, newsletter_id, **kwargs):  # noqa: E501
+        """Cancel a newsletter.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_newsletter(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.cancel_newsletter(newsletter_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param NewsletterCreation config:
-        :return: Newsletter
+        :param async_req bool
+        :param int newsletter_id: ID of the newsletter to retrieve. (required)
+        :return: NewsletterDetail
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
-            return self.create_newsletter_with_http_info(**kwargs)  # noqa: E501
+        if kwargs.get('async_req'):
+            return self.cancel_newsletter_with_http_info(newsletter_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_newsletter_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.cancel_newsletter_with_http_info(newsletter_id, **kwargs)  # noqa: E501
             return data
 
-    def create_newsletter_with_http_info(self, **kwargs):  # noqa: E501
-        """Create a newsletter draft.  # noqa: E501
+    def cancel_newsletter_with_http_info(self, newsletter_id, **kwargs):  # noqa: E501
+        """Cancel a newsletter.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_newsletter_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.cancel_newsletter_with_http_info(newsletter_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param NewsletterCreation config:
-        :return: Newsletter
+        :param async_req bool
+        :param int newsletter_id: ID of the newsletter to retrieve. (required)
+        :return: NewsletterDetail
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['config']  # noqa: E501
-        all_params.append('async')
+        all_params = ['newsletter_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method cancel_newsletter" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'newsletter_id' is set
+        if ('newsletter_id' not in params or
+                params['newsletter_id'] is None):
+            raise ValueError("Missing the required parameter `newsletter_id` when calling `cancel_newsletter`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'newsletter_id' in params:
+            path_params['newsletter_id'] = params['newsletter_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['mailmojo_auth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/v1/newsletters/{newsletter_id}/cancel/', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='NewsletterDetail',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def create_newsletter(self, newsletter, **kwargs):  # noqa: E501
+        """Create a newsletter draft.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_newsletter(newsletter, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param NewsletterCreation newsletter: (required)
+        :return: NewsletterDetail
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_newsletter_with_http_info(newsletter, **kwargs)  # noqa: E501
+        else:
+            (data) = self.create_newsletter_with_http_info(newsletter, **kwargs)  # noqa: E501
+            return data
+
+    def create_newsletter_with_http_info(self, newsletter, **kwargs):  # noqa: E501
+        """Create a newsletter draft.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_newsletter_with_http_info(newsletter, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param NewsletterCreation newsletter: (required)
+        :return: NewsletterDetail
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['newsletter']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -84,6 +181,10 @@ class NewsletterApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'newsletter' is set
+        if ('newsletter' not in params or
+                params['newsletter'] is None):
+            raise ValueError("Missing the required parameter `newsletter` when calling `create_newsletter`")  # noqa: E501
 
         collection_formats = {}
 
@@ -97,8 +198,8 @@ class NewsletterApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'config' in params:
-            body_params = params['config']
+        if 'newsletter' in params:
+            body_params = params['newsletter']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
@@ -111,16 +212,16 @@ class NewsletterApi(object):
         auth_settings = ['mailmojo_auth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/newsletters/', 'POST',
+            '/v1/newsletters/', 'POST',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Newsletter',  # noqa: E501
+            response_type='NewsletterDetail',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -130,18 +231,18 @@ class NewsletterApi(object):
         """Retrieve a newsletter by id.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_newsletter_by_id(newsletter_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_newsletter_by_id(newsletter_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int newsletter_id: ID of the newsletter to retrieve. (required)
-        :return: Newsletter
+        :return: NewsletterDetail
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_newsletter_by_id_with_http_info(newsletter_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_newsletter_by_id_with_http_info(newsletter_id, **kwargs)  # noqa: E501
@@ -151,19 +252,19 @@ class NewsletterApi(object):
         """Retrieve a newsletter by id.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_newsletter_by_id_with_http_info(newsletter_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_newsletter_by_id_with_http_info(newsletter_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int newsletter_id: ID of the newsletter to retrieve. (required)
-        :return: Newsletter
+        :return: NewsletterDetail
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         all_params = ['newsletter_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -208,16 +309,16 @@ class NewsletterApi(object):
         auth_settings = ['mailmojo_auth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/newsletters/{newsletter_id}/', 'GET',
+            '/v1/newsletters/{newsletter_id}/', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Newsletter',  # noqa: E501
+            response_type='NewsletterDetail',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -227,20 +328,20 @@ class NewsletterApi(object):
         """Retrieve all newsletters.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_newsletters(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_newsletters(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int page: The current page of items (1 indexed).
         :param int per_page: The number of items returned per page.
-        :param str type: The type of newsletters to retrieve. Supported options are \"draft\", \"scheduled\" and \"sent\".
-        :return: PaginatedResult
+        :param str type: The type of newsletters to retrieve. Supported options are `draft`, `scheduled` and `sent`.
+        :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_newsletters_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_newsletters_with_http_info(**kwargs)  # noqa: E501
@@ -250,21 +351,21 @@ class NewsletterApi(object):
         """Retrieve all newsletters.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_newsletters_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_newsletters_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int page: The current page of items (1 indexed).
         :param int per_page: The number of items returned per page.
-        :param str type: The type of newsletters to retrieve. Supported options are \"draft\", \"scheduled\" and \"sent\".
-        :return: PaginatedResult
+        :param str type: The type of newsletters to retrieve. Supported options are `draft`, `scheduled` and `sent`.
+        :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         all_params = ['page', 'per_page', 'type']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -309,16 +410,16 @@ class NewsletterApi(object):
         auth_settings = ['mailmojo_auth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/newsletters/', 'GET',
+            '/v1/newsletters/', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='PaginatedResult',  # noqa: E501
+            response_type='InlineResponse200',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -328,19 +429,19 @@ class NewsletterApi(object):
         """Send a newsletter.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_newsletter(newsletter_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.send_newsletter(newsletter_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int newsletter_id: ID of the newsletter to retrieve. (required)
         :param NewsletterSend config:
-        :return: Newsletter
+        :return: NewsletterDetail
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.send_newsletter_with_http_info(newsletter_id, **kwargs)  # noqa: E501
         else:
             (data) = self.send_newsletter_with_http_info(newsletter_id, **kwargs)  # noqa: E501
@@ -350,20 +451,20 @@ class NewsletterApi(object):
         """Send a newsletter.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_newsletter_with_http_info(newsletter_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.send_newsletter_with_http_info(newsletter_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int newsletter_id: ID of the newsletter to retrieve. (required)
         :param NewsletterSend config:
-        :return: Newsletter
+        :return: NewsletterDetail
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         all_params = ['newsletter_id', 'config']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -410,61 +511,61 @@ class NewsletterApi(object):
         auth_settings = ['mailmojo_auth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/newsletters/{newsletter_id}/send/', 'PUT',
+            '/v1/newsletters/{newsletter_id}/send/', 'PUT',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Newsletter',  # noqa: E501
+            response_type='NewsletterDetail',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def test_newsletter(self, newsletter_id, **kwargs):  # noqa: E501
+    def test_newsletter(self, newsletter_id, config, **kwargs):  # noqa: E501
         """Send a test newsletter.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.test_newsletter(newsletter_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.test_newsletter(newsletter_id, config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int newsletter_id: ID of the newsletter to retrieve. (required)
-        :param NewsletterSendTest config:
+        :param NewsletterSendTest config: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
-            return self.test_newsletter_with_http_info(newsletter_id, **kwargs)  # noqa: E501
+        if kwargs.get('async_req'):
+            return self.test_newsletter_with_http_info(newsletter_id, config, **kwargs)  # noqa: E501
         else:
-            (data) = self.test_newsletter_with_http_info(newsletter_id, **kwargs)  # noqa: E501
+            (data) = self.test_newsletter_with_http_info(newsletter_id, config, **kwargs)  # noqa: E501
             return data
 
-    def test_newsletter_with_http_info(self, newsletter_id, **kwargs):  # noqa: E501
+    def test_newsletter_with_http_info(self, newsletter_id, config, **kwargs):  # noqa: E501
         """Send a test newsletter.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.test_newsletter_with_http_info(newsletter_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.test_newsletter_with_http_info(newsletter_id, config, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int newsletter_id: ID of the newsletter to retrieve. (required)
-        :param NewsletterSendTest config:
+        :param NewsletterSendTest config: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         all_params = ['newsletter_id', 'config']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -482,6 +583,10 @@ class NewsletterApi(object):
         if ('newsletter_id' not in params or
                 params['newsletter_id'] is None):
             raise ValueError("Missing the required parameter `newsletter_id` when calling `test_newsletter`")  # noqa: E501
+        # verify the required parameter 'config' is set
+        if ('config' not in params or
+                params['config'] is None):
+            raise ValueError("Missing the required parameter `config` when calling `test_newsletter`")  # noqa: E501
 
         collection_formats = {}
 
@@ -511,7 +616,7 @@ class NewsletterApi(object):
         auth_settings = ['mailmojo_auth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/newsletters/{newsletter_id}/send_test/', 'POST',
+            '/v1/newsletters/{newsletter_id}/send_test/', 'POST',
             path_params,
             query_params,
             header_params,
@@ -520,7 +625,108 @@ class NewsletterApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_newsletter(self, id, **kwargs):  # noqa: E501
+        """Update a newsletter draft partially.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_newsletter(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id: ID of the newsletter to update. (required)
+        :param NewsletterUpdate newsletter:
+        :return: NewsletterDetail
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_newsletter_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_newsletter_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def update_newsletter_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Update a newsletter draft partially.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_newsletter_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id: ID of the newsletter to update. (required)
+        :param NewsletterUpdate newsletter:
+        :return: NewsletterDetail
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'newsletter']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_newsletter" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `update_newsletter`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'newsletter' in params:
+            body_params = params['newsletter']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['mailmojo_auth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/v1/newsletters/{newsletter_id}/', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='NewsletterDetail',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

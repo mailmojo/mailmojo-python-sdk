@@ -15,18 +15,25 @@ from __future__ import absolute_import
 
 import unittest
 
-import mailmojo
-from mailmojo.api.newsletter_api import NewsletterApi  # noqa: E501
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.api.newsletter_api import NewsletterApi  # noqa: E501
+from mailmojo_sdk.rest import ApiException
 
 
 class TestNewsletterApi(unittest.TestCase):
     """NewsletterApi unit test stubs"""
 
     def setUp(self):
-        self.api = mailmojo.api.newsletter_api.NewsletterApi()  # noqa: E501
+        self.api = mailmojo_sdk.api.newsletter_api.NewsletterApi()  # noqa: E501
 
     def tearDown(self):
+        pass
+
+    def test_cancel_newsletter(self):
+        """Test case for cancel_newsletter
+
+        Cancel a newsletter.  # noqa: E501
+        """
         pass
 
     def test_create_newsletter(self):
@@ -61,6 +68,13 @@ class TestNewsletterApi(unittest.TestCase):
         """Test case for test_newsletter
 
         Send a test newsletter.  # noqa: E501
+        """
+        pass
+
+    def test_update_newsletter(self):
+        """Test case for update_newsletter
+
+        Update a newsletter draft partially.  # noqa: E501
         """
         pass
 

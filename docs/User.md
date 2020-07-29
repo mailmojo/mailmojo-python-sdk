@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **contact_email** | **str** |  | 
 **contact_name** | **str** |  | [optional] 
 **created** | **datetime** |  | [optional] 
+**logo** | **object** |  | [optional] 
 **logo_url** | **str** |  | [optional] 
 **name** | **str** |  | 
 **num_contacts** | **int** |  | [optional] 

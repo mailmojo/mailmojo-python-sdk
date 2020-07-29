@@ -248,6 +248,9 @@ class Subscriber(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Subscriber, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

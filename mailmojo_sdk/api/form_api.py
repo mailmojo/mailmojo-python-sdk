@@ -33,22 +33,224 @@ class FormApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def form_add_subscriber(self, id, subscriber, **kwargs):  # noqa: E501
+        """Add a subscriber through a form and track the conversion.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.form_add_subscriber(id, subscriber, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id: ID of the form. (required)
+        :param AddFormSubscriber subscriber: (required)
+        :return: FormConversion
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.form_add_subscriber_with_http_info(id, subscriber, **kwargs)  # noqa: E501
+        else:
+            (data) = self.form_add_subscriber_with_http_info(id, subscriber, **kwargs)  # noqa: E501
+            return data
+
+    def form_add_subscriber_with_http_info(self, id, subscriber, **kwargs):  # noqa: E501
+        """Add a subscriber through a form and track the conversion.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.form_add_subscriber_with_http_info(id, subscriber, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id: ID of the form. (required)
+        :param AddFormSubscriber subscriber: (required)
+        :return: FormConversion
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'subscriber']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method form_add_subscriber" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `form_add_subscriber`")  # noqa: E501
+        # verify the required parameter 'subscriber' is set
+        if ('subscriber' not in params or
+                params['subscriber'] is None):
+            raise ValueError("Missing the required parameter `subscriber` when calling `form_add_subscriber`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'subscriber' in params:
+            body_params = params['subscriber']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['mailmojo_auth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/v1/forms/{id}/subscribers/', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='FormConversion',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_form_by_id(self, id, **kwargs):  # noqa: E501
+        """Retrieve a form.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_form_by_id(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id: ID of the form to retrieve. (required)
+        :return: Form
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_form_by_id_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_form_by_id_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def get_form_by_id_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Retrieve a form.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_form_by_id_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id: ID of the form to retrieve. (required)
+        :return: Form
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_form_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `get_form_by_id`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['mailmojo_auth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/v1/forms/{id}/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Form',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_forms(self, **kwargs):  # noqa: E501
         """Retrieve all forms.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_forms(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_forms(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool is_published: List only published forms.
         :return: list[Form]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_forms_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_forms_with_http_info(**kwargs)  # noqa: E501
@@ -58,11 +260,11 @@ class FormApi(object):
         """Retrieve all forms.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_forms_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_forms_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool is_published: List only published forms.
         :return: list[Form]
                  If the method is called asynchronously,
@@ -70,7 +272,7 @@ class FormApi(object):
         """
 
         all_params = ['is_published']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -111,7 +313,7 @@ class FormApi(object):
         auth_settings = ['mailmojo_auth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/forms/', 'GET',
+            '/v1/forms/', 'GET',
             path_params,
             query_params,
             header_params,
@@ -120,7 +322,112 @@ class FormApi(object):
             files=local_var_files,
             response_type='list[Form]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def track_form_view(self, id, view, **kwargs):  # noqa: E501
+        """Track a view of a form.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.track_form_view(id, view, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id: ID of the form to track view of. (required)
+        :param TrackFormView view: (required)
+        :return: TrackFormView
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.track_form_view_with_http_info(id, view, **kwargs)  # noqa: E501
+        else:
+            (data) = self.track_form_view_with_http_info(id, view, **kwargs)  # noqa: E501
+            return data
+
+    def track_form_view_with_http_info(self, id, view, **kwargs):  # noqa: E501
+        """Track a view of a form.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.track_form_view_with_http_info(id, view, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int id: ID of the form to track view of. (required)
+        :param TrackFormView view: (required)
+        :return: TrackFormView
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'view']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method track_form_view" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `track_form_view`")  # noqa: E501
+        # verify the required parameter 'view' is set
+        if ('view' not in params or
+                params['view'] is None):
+            raise ValueError("Missing the required parameter `view` when calling `track_form_view`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'view' in params:
+            body_params = params['view']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['mailmojo_auth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/v1/forms/{id}/track/view/', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TrackFormView',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -130,18 +437,19 @@ class FormApi(object):
         """Update a form partially.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_form(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_form(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int id: ID of the form to update. (required)
+        :param Form form:
         :return: Form
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.update_form_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.update_form_with_http_info(id, **kwargs)  # noqa: E501
@@ -151,19 +459,20 @@ class FormApi(object):
         """Update a form partially.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_form_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_form_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int id: ID of the form to update. (required)
+        :param Form form:
         :return: Form
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
-        all_params.append('async')
+        all_params = ['id', 'form']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -196,6 +505,8 @@ class FormApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'form' in params:
+            body_params = params['form']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
@@ -208,7 +519,7 @@ class FormApi(object):
         auth_settings = ['mailmojo_auth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/forms/{id}/', 'PATCH',
+            '/v1/forms/{id}/', 'PATCH',
             path_params,
             query_params,
             header_params,
@@ -217,7 +528,7 @@ class FormApi(object):
             files=local_var_files,
             response_type='Form',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

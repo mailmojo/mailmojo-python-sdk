@@ -37,18 +37,18 @@ class ListApi(object):
         """Retrieve an email list.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_list_by_id(list_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_list_by_id(list_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int list_id: ID of the email list to retrieve. (required)
         :return: ListDetail
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_list_by_id_with_http_info(list_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_list_by_id_with_http_info(list_id, **kwargs)  # noqa: E501
@@ -58,11 +58,11 @@ class ListApi(object):
         """Retrieve an email list.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_list_by_id_with_http_info(list_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_list_by_id_with_http_info(list_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int list_id: ID of the email list to retrieve. (required)
         :return: ListDetail
                  If the method is called asynchronously,
@@ -70,7 +70,7 @@ class ListApi(object):
         """
 
         all_params = ['list_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -115,7 +115,7 @@ class ListApi(object):
         auth_settings = ['mailmojo_auth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/lists/{list_id}/', 'GET',
+            '/v1/lists/{list_id}/', 'GET',
             path_params,
             query_params,
             header_params,
@@ -124,7 +124,7 @@ class ListApi(object):
             files=local_var_files,
             response_type='ListDetail',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -134,17 +134,17 @@ class ListApi(object):
         """Retrieve all email lists.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_lists(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_lists(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :return: list[List]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_lists_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_lists_with_http_info(**kwargs)  # noqa: E501
@@ -154,18 +154,18 @@ class ListApi(object):
         """Retrieve all email lists.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_lists_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_lists_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :return: list[List]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         all_params = []  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -204,7 +204,7 @@ class ListApi(object):
         auth_settings = ['mailmojo_auth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/lists/', 'GET',
+            '/v1/lists/', 'GET',
             path_params,
             query_params,
             header_params,
@@ -213,7 +213,7 @@ class ListApi(object):
             files=local_var_files,
             response_type='list[List]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -223,19 +223,19 @@ class ListApi(object):
         """Retrieve a subscriber.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_subscriber_on_list_by_email(list_id, email, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_subscriber_on_list_by_email(list_id, email, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param int list_id: ID of the email list to retrieve the subscriber from.  (required)
+        :param async_req bool
+        :param int list_id: ID of the email list to retrieve the subscriber from. (required)
         :param str email: Email address of the contact to retrieve. (required)
         :return: Subscriber
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_subscriber_on_list_by_email_with_http_info(list_id, email, **kwargs)  # noqa: E501
         else:
             (data) = self.get_subscriber_on_list_by_email_with_http_info(list_id, email, **kwargs)  # noqa: E501
@@ -245,12 +245,12 @@ class ListApi(object):
         """Retrieve a subscriber.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_subscriber_on_list_by_email_with_http_info(list_id, email, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_subscriber_on_list_by_email_with_http_info(list_id, email, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param int list_id: ID of the email list to retrieve the subscriber from.  (required)
+        :param async_req bool
+        :param int list_id: ID of the email list to retrieve the subscriber from. (required)
         :param str email: Email address of the contact to retrieve. (required)
         :return: Subscriber
                  If the method is called asynchronously,
@@ -258,7 +258,7 @@ class ListApi(object):
         """
 
         all_params = ['list_id', 'email']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -309,7 +309,7 @@ class ListApi(object):
         auth_settings = ['mailmojo_auth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/lists/{list_id}/subscribers/{email}/', 'GET',
+            '/v1/lists/{list_id}/subscribers/{email}/', 'GET',
             path_params,
             query_params,
             header_params,
@@ -318,7 +318,7 @@ class ListApi(object):
             files=local_var_files,
             response_type='Subscriber',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -328,18 +328,19 @@ class ListApi(object):
         """Retrieve subscribers on a list.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_subscribers_on_list(list_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_subscribers_on_list(list_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int list_id: ID of the email list. (required)
+        :param int limit: Limits the result to given count.
         :return: list[Subscriber]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_subscribers_on_list_with_http_info(list_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_subscribers_on_list_with_http_info(list_id, **kwargs)  # noqa: E501
@@ -349,19 +350,20 @@ class ListApi(object):
         """Retrieve subscribers on a list.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_subscribers_on_list_with_http_info(list_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_subscribers_on_list_with_http_info(list_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int list_id: ID of the email list. (required)
+        :param int limit: Limits the result to given count.
         :return: list[Subscriber]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['list_id']  # noqa: E501
-        all_params.append('async')
+        all_params = ['list_id', 'limit']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -387,6 +389,8 @@ class ListApi(object):
             path_params['list_id'] = params['list_id']  # noqa: E501
 
         query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
 
         header_params = {}
 
@@ -406,7 +410,7 @@ class ListApi(object):
         auth_settings = ['mailmojo_auth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/lists/{list_id}/subscribers/', 'GET',
+            '/v1/lists/{list_id}/subscribers/', 'GET',
             path_params,
             query_params,
             header_params,
@@ -415,52 +419,153 @@ class ListApi(object):
             files=local_var_files,
             response_type='list[Subscriber]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def import_subscribers_to_list(self, list_id, **kwargs):  # noqa: E501
+    def get_unsubscribed_on_list(self, list_id, **kwargs):  # noqa: E501
+        """Retrieve unsubscribed contacts on a list.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_unsubscribed_on_list(list_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int list_id: ID of the email list. (required)
+        :param int limit: Limits the result to given count.
+        :return: list[Contact]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_unsubscribed_on_list_with_http_info(list_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_unsubscribed_on_list_with_http_info(list_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_unsubscribed_on_list_with_http_info(self, list_id, **kwargs):  # noqa: E501
+        """Retrieve unsubscribed contacts on a list.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_unsubscribed_on_list_with_http_info(list_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int list_id: ID of the email list. (required)
+        :param int limit: Limits the result to given count.
+        :return: list[Contact]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['list_id', 'limit']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_unsubscribed_on_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'list_id' is set
+        if ('list_id' not in params or
+                params['list_id'] is None):
+            raise ValueError("Missing the required parameter `list_id` when calling `get_unsubscribed_on_list`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'list_id' in params:
+            path_params['list_id'] = params['list_id']  # noqa: E501
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['mailmojo_auth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/v1/lists/{list_id}/unsubscribed/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[Contact]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def import_subscribers_to_list(self, list_id, contacts, **kwargs):  # noqa: E501
         """Subscribe contacts to the email list.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.import_subscribers_to_list(list_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.import_subscribers_to_list(list_id, contacts, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int list_id: ID of the email list to subscribe to. (required)
-        :param list[Contacts] contacts:
+        :param list[Contacts] contacts: (required)
         :return: ImportResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
-            return self.import_subscribers_to_list_with_http_info(list_id, **kwargs)  # noqa: E501
+        if kwargs.get('async_req'):
+            return self.import_subscribers_to_list_with_http_info(list_id, contacts, **kwargs)  # noqa: E501
         else:
-            (data) = self.import_subscribers_to_list_with_http_info(list_id, **kwargs)  # noqa: E501
+            (data) = self.import_subscribers_to_list_with_http_info(list_id, contacts, **kwargs)  # noqa: E501
             return data
 
-    def import_subscribers_to_list_with_http_info(self, list_id, **kwargs):  # noqa: E501
+    def import_subscribers_to_list_with_http_info(self, list_id, contacts, **kwargs):  # noqa: E501
         """Subscribe contacts to the email list.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.import_subscribers_to_list_with_http_info(list_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.import_subscribers_to_list_with_http_info(list_id, contacts, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int list_id: ID of the email list to subscribe to. (required)
-        :param list[Contacts] contacts:
+        :param list[Contacts] contacts: (required)
         :return: ImportResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         all_params = ['list_id', 'contacts']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -478,6 +583,10 @@ class ListApi(object):
         if ('list_id' not in params or
                 params['list_id'] is None):
             raise ValueError("Missing the required parameter `list_id` when calling `import_subscribers_to_list`")  # noqa: E501
+        # verify the required parameter 'contacts' is set
+        if ('contacts' not in params or
+                params['contacts'] is None):
+            raise ValueError("Missing the required parameter `contacts` when calling `import_subscribers_to_list`")  # noqa: E501
 
         collection_formats = {}
 
@@ -507,7 +616,7 @@ class ListApi(object):
         auth_settings = ['mailmojo_auth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/lists/{list_id}/subscribers/import/', 'POST',
+            '/v1/lists/{list_id}/subscribers/import/', 'POST',
             path_params,
             query_params,
             header_params,
@@ -516,52 +625,52 @@ class ListApi(object):
             files=local_var_files,
             response_type='ImportResult',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def subscribe_contact_to_list(self, list_id, **kwargs):  # noqa: E501
+    def subscribe_contact_to_list(self, list_id, contact, **kwargs):  # noqa: E501
         """Subscribe a contact to the email list.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.subscribe_contact_to_list(list_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.subscribe_contact_to_list(list_id, contact, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int list_id: ID of the email list to subscribe to. (required)
-        :param Subscriber contact:
+        :param Subscriber contact: (required)
         :return: Contact
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
-            return self.subscribe_contact_to_list_with_http_info(list_id, **kwargs)  # noqa: E501
+        if kwargs.get('async_req'):
+            return self.subscribe_contact_to_list_with_http_info(list_id, contact, **kwargs)  # noqa: E501
         else:
-            (data) = self.subscribe_contact_to_list_with_http_info(list_id, **kwargs)  # noqa: E501
+            (data) = self.subscribe_contact_to_list_with_http_info(list_id, contact, **kwargs)  # noqa: E501
             return data
 
-    def subscribe_contact_to_list_with_http_info(self, list_id, **kwargs):  # noqa: E501
+    def subscribe_contact_to_list_with_http_info(self, list_id, contact, **kwargs):  # noqa: E501
         """Subscribe a contact to the email list.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.subscribe_contact_to_list_with_http_info(list_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.subscribe_contact_to_list_with_http_info(list_id, contact, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int list_id: ID of the email list to subscribe to. (required)
-        :param Subscriber contact:
+        :param Subscriber contact: (required)
         :return: Contact
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         all_params = ['list_id', 'contact']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -579,6 +688,10 @@ class ListApi(object):
         if ('list_id' not in params or
                 params['list_id'] is None):
             raise ValueError("Missing the required parameter `list_id` when calling `subscribe_contact_to_list`")  # noqa: E501
+        # verify the required parameter 'contact' is set
+        if ('contact' not in params or
+                params['contact'] is None):
+            raise ValueError("Missing the required parameter `contact` when calling `subscribe_contact_to_list`")  # noqa: E501
 
         collection_formats = {}
 
@@ -608,7 +721,7 @@ class ListApi(object):
         auth_settings = ['mailmojo_auth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/lists/{list_id}/subscribers/', 'POST',
+            '/v1/lists/{list_id}/subscribers/', 'POST',
             path_params,
             query_params,
             header_params,
@@ -617,7 +730,7 @@ class ListApi(object):
             files=local_var_files,
             response_type='Contact',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -627,11 +740,11 @@ class ListApi(object):
         """Unsubscribe a contact.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.unsubscribe_contact_on_list_by_email(list_id, email, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.unsubscribe_contact_on_list_by_email(list_id, email, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int list_id: ID of the email list to unsubscribe from. (required)
         :param str email: Email address of the contact to unsubscribe. (required)
         :return: Contact
@@ -639,7 +752,7 @@ class ListApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.unsubscribe_contact_on_list_by_email_with_http_info(list_id, email, **kwargs)  # noqa: E501
         else:
             (data) = self.unsubscribe_contact_on_list_by_email_with_http_info(list_id, email, **kwargs)  # noqa: E501
@@ -649,11 +762,11 @@ class ListApi(object):
         """Unsubscribe a contact.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.unsubscribe_contact_on_list_by_email_with_http_info(list_id, email, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.unsubscribe_contact_on_list_by_email_with_http_info(list_id, email, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int list_id: ID of the email list to unsubscribe from. (required)
         :param str email: Email address of the contact to unsubscribe. (required)
         :return: Contact
@@ -662,7 +775,7 @@ class ListApi(object):
         """
 
         all_params = ['list_id', 'email']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -713,7 +826,7 @@ class ListApi(object):
         auth_settings = ['mailmojo_auth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/lists/{list_id}/subscribers/{email}/', 'DELETE',
+            '/v1/lists/{list_id}/subscribers/{email}/', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -722,7 +835,7 @@ class ListApi(object):
             files=local_var_files,
             response_type='Contact',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -732,18 +845,19 @@ class ListApi(object):
         """Update an email list partially.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_list(list_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_list(list_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int list_id: ID of the email list to retrieve. (required)
+        :param ListDetail list:
         :return: ListDetail
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.update_list_with_http_info(list_id, **kwargs)  # noqa: E501
         else:
             (data) = self.update_list_with_http_info(list_id, **kwargs)  # noqa: E501
@@ -753,19 +867,20 @@ class ListApi(object):
         """Update an email list partially.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_list_with_http_info(list_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_list_with_http_info(list_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int list_id: ID of the email list to retrieve. (required)
+        :param ListDetail list:
         :return: ListDetail
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['list_id']  # noqa: E501
-        all_params.append('async')
+        all_params = ['list_id', 'list']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -798,6 +913,8 @@ class ListApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'list' in params:
+            body_params = params['list']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
@@ -810,7 +927,7 @@ class ListApi(object):
         auth_settings = ['mailmojo_auth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/lists/{list_id}/', 'PATCH',
+            '/v1/lists/{list_id}/', 'PATCH',
             path_params,
             query_params,
             header_params,
@@ -819,7 +936,7 @@ class ListApi(object):
             files=local_var_files,
             response_type='ListDetail',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

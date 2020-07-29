@@ -15,16 +15,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import mailmojo
-from mailmojo.api.account_api import AccountApi  # noqa: E501
-from mailmojo.rest import ApiException
+import mailmojo_sdk
+from mailmojo_sdk.api.account_api import AccountApi  # noqa: E501
+from mailmojo_sdk.rest import ApiException
 
 
 class TestAccountApi(unittest.TestCase):
     """AccountApi unit test stubs"""
 
     def setUp(self):
-        self.api = mailmojo.api.account_api.AccountApi()  # noqa: E501
+        self.api = mailmojo_sdk.api.account_api.AccountApi()  # noqa: E501
 
     def tearDown(self):
         pass
@@ -40,6 +40,13 @@ class TestAccountApi(unittest.TestCase):
         """Test case for get_account_by_username
 
         Retrieve account details.  # noqa: E501
+        """
+        pass
+
+    def test_get_domain(self):
+        """Test case for get_domain
+
+        Retrieve domain details and authentication status.  # noqa: E501
         """
         pass
 
