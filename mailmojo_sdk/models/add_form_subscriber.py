@@ -32,26 +32,27 @@ class AddFormSubscriber(object):
     """
     swagger_types = {
         'contact': 'BaseContact',
-        'form_id': 'int',
+        'page_view_id': 'int',
         'view_id': 'int'
     }
 
     attribute_map = {
         'contact': 'contact',
-        'form_id': 'form_id',
+        'page_view_id': 'page_view_id',
         'view_id': 'view_id'
     }
 
-    def __init__(self, contact=None, form_id=None, view_id=None):  # noqa: E501
+    def __init__(self, contact=None, page_view_id=None, view_id=None):  # noqa: E501
         """AddFormSubscriber - a model defined in Swagger"""  # noqa: E501
 
         self._contact = None
-        self._form_id = None
+        self._page_view_id = None
         self._view_id = None
         self.discriminator = None
 
         self.contact = contact
-        self.form_id = form_id
+        if page_view_id is not None:
+            self.page_view_id = page_view_id
         self.view_id = view_id
 
     @property
@@ -78,27 +79,25 @@ class AddFormSubscriber(object):
         self._contact = contact
 
     @property
-    def form_id(self):
-        """Gets the form_id of this AddFormSubscriber.  # noqa: E501
+    def page_view_id(self):
+        """Gets the page_view_id of this AddFormSubscriber.  # noqa: E501
 
 
-        :return: The form_id of this AddFormSubscriber.  # noqa: E501
+        :return: The page_view_id of this AddFormSubscriber.  # noqa: E501
         :rtype: int
         """
-        return self._form_id
+        return self._page_view_id
 
-    @form_id.setter
-    def form_id(self, form_id):
-        """Sets the form_id of this AddFormSubscriber.
+    @page_view_id.setter
+    def page_view_id(self, page_view_id):
+        """Sets the page_view_id of this AddFormSubscriber.
 
 
-        :param form_id: The form_id of this AddFormSubscriber.  # noqa: E501
+        :param page_view_id: The page_view_id of this AddFormSubscriber.  # noqa: E501
         :type: int
         """
-        if form_id is None:
-            raise ValueError("Invalid value for `form_id`, must not be `None`")  # noqa: E501
 
-        self._form_id = form_id
+        self._page_view_id = page_view_id
 
     @property
     def view_id(self):

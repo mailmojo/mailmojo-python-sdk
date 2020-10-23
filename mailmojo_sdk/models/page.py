@@ -44,6 +44,7 @@ class Page(object):
         'id': 'int',
         'lid': 'int',
         'name': 'str',
+        'public_url': 'str',
         'published_at': 'datetime',
         'slug': 'str',
         'subscribe_tags': 'list[str]',
@@ -65,6 +66,7 @@ class Page(object):
         'id': 'id',
         'lid': 'lid',
         'name': 'name',
+        'public_url': 'public_url',
         'published_at': 'published_at',
         'slug': 'slug',
         'subscribe_tags': 'subscribe_tags',
@@ -72,7 +74,7 @@ class Page(object):
         'updated_at': 'updated_at'
     }
 
-    def __init__(self, config=None, confirmation_html=None, created_at=None, editor_confirmation_html=None, editor_html=None, expired_at=None, final_confirmation_html=None, final_html=None, form_id=None, html=None, id=None, lid=None, name=None, published_at=None, slug=None, subscribe_tags=None, template_id=None, updated_at=None):  # noqa: E501
+    def __init__(self, config=None, confirmation_html=None, created_at=None, editor_confirmation_html=None, editor_html=None, expired_at=None, final_confirmation_html=None, final_html=None, form_id=None, html=None, id=None, lid=None, name=None, public_url=None, published_at=None, slug=None, subscribe_tags=None, template_id=None, updated_at=None):  # noqa: E501
         """Page - a model defined in Swagger"""  # noqa: E501
 
         self._config = None
@@ -88,6 +90,7 @@ class Page(object):
         self._id = None
         self._lid = None
         self._name = None
+        self._public_url = None
         self._published_at = None
         self._slug = None
         self._subscribe_tags = None
@@ -116,10 +119,11 @@ class Page(object):
             self.id = id
         self.lid = lid
         self.name = name
+        if public_url is not None:
+            self.public_url = public_url
         if published_at is not None:
             self.published_at = published_at
-        if slug is not None:
-            self.slug = slug
+        self.slug = slug
         if subscribe_tags is not None:
             self.subscribe_tags = subscribe_tags
         if template_id is not None:
@@ -411,6 +415,27 @@ class Page(object):
         self._name = name
 
     @property
+    def public_url(self):
+        """Gets the public_url of this Page.  # noqa: E501
+
+
+        :return: The public_url of this Page.  # noqa: E501
+        :rtype: str
+        """
+        return self._public_url
+
+    @public_url.setter
+    def public_url(self, public_url):
+        """Sets the public_url of this Page.
+
+
+        :param public_url: The public_url of this Page.  # noqa: E501
+        :type: str
+        """
+
+        self._public_url = public_url
+
+    @property
     def published_at(self):
         """Gets the published_at of this Page.  # noqa: E501
 
@@ -449,6 +474,8 @@ class Page(object):
         :param slug: The slug of this Page.  # noqa: E501
         :type: str
         """
+        if slug is None:
+            raise ValueError("Invalid value for `slug`, must not be `None`")  # noqa: E501
 
         self._slug = slug
 

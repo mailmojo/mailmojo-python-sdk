@@ -11,5 +11,6 @@ from mailmojo_sdk.api.form_api import FormApi
 from mailmojo_sdk.api.list_api import ListApi
 from mailmojo_sdk.api.newsletter_api import NewsletterApi
 from mailmojo_sdk.api.page_api import PageApi
+from mailmojo_sdk.api.segment_api import SegmentApi
 from mailmojo_sdk.api.template_api import TemplateApi
 from mailmojo_sdk.api.webhook_api import WebhookApi

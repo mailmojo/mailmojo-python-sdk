@@ -1,11 +1,10 @@
-# AddFormSubscriber
+# SegmentTagPredicate
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**contact** | [**BaseContact**](BaseContact.md) |  | 
-**page_view_id** | **int** |  | [optional] 
-**view_id** | **int** |  | 
+**tag_name** | **str** |  | 
+**type** | **str** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

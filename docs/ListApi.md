@@ -4,6 +4,7 @@ All URIs are relative to *https://api.mailmojo.no*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_segment**](ListApi.md#create_segment) | **POST** /v1/lists/{list_id}/segments/ | Create a segment in the email list.
 [**get_list_by_id**](ListApi.md#get_list_by_id) | **GET** /v1/lists/{list_id}/ | Retrieve an email list.
 [**get_lists**](ListApi.md#get_lists) | **GET** /v1/lists/ | Retrieve all email lists.
 [**get_subscriber_on_list_by_email**](ListApi.md#get_subscriber_on_list_by_email) | **GET** /v1/lists/{list_id}/subscribers/{email}/ | Retrieve a subscriber.
@@ -14,6 +15,58 @@ Method | HTTP request | Description
 [**unsubscribe_contact_on_list_by_email**](ListApi.md#unsubscribe_contact_on_list_by_email) | **DELETE** /v1/lists/{list_id}/subscribers/{email}/ | Unsubscribe a contact.
 [**update_list**](ListApi.md#update_list) | **PATCH** /v1/lists/{list_id}/ | Update an email list partially.
 
+
+# **create_segment**
+> Segment create_segment(list_id, segment)
+
+Create a segment in the email list.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import mailmojo_sdk
+from mailmojo_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: mailmojo_auth
+configuration = mailmojo_sdk.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = mailmojo_sdk.ListApi(mailmojo_sdk.ApiClient(configuration))
+list_id = NULL # object | ID of the email list to create a segment in.
+segment = mailmojo_sdk.SegmentCreation() # SegmentCreation | 
+
+try:
+    # Create a segment in the email list.
+    api_response = api_instance.create_segment(list_id, segment)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ListApi->create_segment: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list_id** | [**object**](.md)| ID of the email list to create a segment in. | 
+ **segment** | [**SegmentCreation**](SegmentCreation.md)|  | 
+
+### Return type
+
+[**Segment**](Segment.md)
+
+### Authorization
+
+[mailmojo_auth](../README.md#mailmojo_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_list_by_id**
 > ListDetail get_list_by_id(list_id)

@@ -43,10 +43,13 @@ from mailmojo_sdk.models.page import Page
 from mailmojo_sdk.models.page_meta import PageMeta
 from mailmojo_sdk.models.schema import Schema
 from mailmojo_sdk.models.segment import Segment
+from mailmojo_sdk.models.segment_creation import SegmentCreation
+from mailmojo_sdk.models.segment_tag_predicate import SegmentTagPredicate
 from mailmojo_sdk.models.statistics import Statistics
 from mailmojo_sdk.models.subscriber import Subscriber
 from mailmojo_sdk.models.template import Template
 from mailmojo_sdk.models.track_form_view import TrackFormView
+from mailmojo_sdk.models.track_page_view import TrackPageView
 from mailmojo_sdk.models.user import User
 from mailmojo_sdk.models.user_creation import UserCreation
 from mailmojo_sdk.models.webhook_creation import WebhookCreation

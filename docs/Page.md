@@ -16,8 +16,9 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] 
 **lid** | **int** |  | 
 **name** | **str** |  | 
+**public_url** | **str** |  | [optional] 
 **published_at** | **datetime** |  | [optional] 
-**slug** | **str** |  | [optional] 
+**slug** | **str** |  | 
 **subscribe_tags** | **list[str]** |  | [optional] 
 **template_id** | **int** |  | [optional] 
 **updated_at** | **datetime** |  | [optional] 

@@ -1,11 +1,11 @@
-# AddFormSubscriber
+# SegmentCreation
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**contact** | [**BaseContact**](BaseContact.md) |  | 
-**page_view_id** | **int** |  | [optional] 
-**view_id** | **int** |  | 
+**list_id** | **int** |  | 
+**name** | **str** |  | 
+**predicates** | [**list[SegmentTagPredicate]**](SegmentTagPredicate.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
